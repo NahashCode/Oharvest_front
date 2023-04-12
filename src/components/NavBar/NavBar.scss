@@ -1,7 +1,8 @@
+@use '../../styles/vars';
 .navbar {
     display: flex;
     align-items: center;
-    background-color: rgb(187, 179, 179);
+    background-color: vars.$background-color;
 }
 
 .navbar__title {
@@ -24,7 +25,7 @@ img {
     width: 80px;
     height: 80px;
     margin: 10px;
-    background-color: rgb(187, 179, 179);
+    background-color: vars.$background-color;
 }
 
 @media screen and (max-width: 520px) {

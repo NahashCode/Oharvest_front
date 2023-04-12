@@ -1,6 +1,7 @@
+import React from 'react';
 import './NavBar.scss';
-import logo from "../../../public/image (3).png";
 
+import logo from '../../assets/image_cueillette.png';
 
 const NavBar = () => {
     return (
@@ -8,13 +9,13 @@ const NavBar = () => {
             <img className='navbar__img' src={ logo } alt="" />
             <ul className='navbar__title'>
                 <li className='navbar__link'>
-                <a href='/'>Produits de saison</a>
+                    <a href='/'>Produits de saison</a>
                 </li>
                 <li className='navbar__link'>
-                <a href='/'>Plan de la cueillette</a>
+                    <a href='/'>Plan de la cueillette</a>
                 </li>
                 <li className='navbar__link'>
-                <a href='/'>Visite scolaire</a>
+                    <a href='/'>Visite scolaire</a>
                 </li>
             </ul>
         </nav>
