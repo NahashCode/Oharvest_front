@@ -14,7 +14,7 @@ function App() {
       <Header />
       <HighlightBar />
       <Welcome />
-      <ContactSection />
+      {/* <ContactSection /> */}
       <Footer />
       <NavBar />
     </div>
