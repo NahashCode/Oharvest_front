@@ -1,7 +1,7 @@
 import Header from './Header/Header';
 import HighlightBar from './HighlightBar/HighlightBar';
 import Welcome from './Welcome/Welcome';
-import ContactSection from './ContactSection/ContactSection';
+/* import ContactSection from './ContactSection/ContactSection'; */
 import NavBar from './NavBar/NavBar';
 import Footer from './Footer/Footer';
 
@@ -14,7 +14,7 @@ function App() {
       <Header />
       <HighlightBar />
       <Welcome />
-      <ContactSection />
+      {/* <ContactSection /> */}
       <Footer />
       <NavBar />
     </div>
