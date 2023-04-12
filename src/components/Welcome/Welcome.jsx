@@ -6,7 +6,7 @@ import './Welcome.scss';
 const Welcome = () => {
     return (
         <div className='welcome'>
-            <img className='welcome__img' src='https://cdn.pixabay.com/photo/2018/11/10/11/03/pumpkin-3806393_960_720.jpg' alt='legumes'></img>
+            <img className='welcome__img' src='https://cdn.pixabay.com/photo/2020/04/06/11/22/seedling-5009286_960_720.jpg' alt='legumes'></img>
             
             <h2 className='welcome__title'>A propos de la cueillette</h2>
 

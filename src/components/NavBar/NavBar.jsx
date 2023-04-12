@@ -1,5 +1,5 @@
 import './NavBar.scss';
-import logo from "../../../public/image (3).png";
+import logo from '../../assets/logo_oharvest.png';
 
 
 const NavBar = () => {
