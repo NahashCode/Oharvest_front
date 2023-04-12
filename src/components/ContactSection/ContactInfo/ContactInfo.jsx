@@ -7,10 +7,10 @@ const ContactInfo = () => {
                 <i className="fa-solid fa-location-dot"></i> 22, rue de la moisson 54000 MUIZON
             </p>
             <p>
-                [icone mail] cueillette-oharvest@mail.com
+                <i class="fa-solid fa-envelope"></i> cueillette-oharvest@mail.com
             </p>
             <p>
-                [icone telephone] 00 00 00 00 00
+                <i class="fa-solid fa-phone"></i> 00 00 00 00 00
             </p>
         </div>
     );
