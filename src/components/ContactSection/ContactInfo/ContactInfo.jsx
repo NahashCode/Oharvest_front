@@ -1,3 +1,4 @@
+import React from 'react';
 import './ContactInfo.scss';
 
 const ContactInfo = () => {
@@ -7,13 +8,13 @@ const ContactInfo = () => {
                 <i className="fa-solid fa-location-dot"></i> 22, rue de la moisson 54000 MUIZON
             </p>
             <p>
-                [icone mail] cueillette-oharvest@mail.com
+                <i className="fa-solid fa-envelope"></i> cueillette-oharvest@mail.com
             </p>
             <p>
-                [icone telephone] 00 00 00 00 00
+                <i className="fa-solid fa-phone"></i> 00 00 00 00 00
             </p>
         </div>
     );
-}
+};
 
 export default ContactInfo;
