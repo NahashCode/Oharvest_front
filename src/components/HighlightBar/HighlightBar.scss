@@ -1,7 +1,5 @@
 @use '../../styles/vars';
 
-
-
 .highlight {
     height: 120px;
 }
@@ -13,4 +11,16 @@
     align-content: center;
     margin: auto;
     padding: 10px;
+}
+
+@media screen and (max-width: 425px) {
+    .highlight {
+        height: 60px;
+    }
+    .highlight__card {
+        height: 50px;
+        justify-content: center;
+        align-items: center;
+        align-content: center;
+    }    
 }

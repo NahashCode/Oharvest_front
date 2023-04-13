@@ -8,7 +8,7 @@ import 'slick-carousel/slick/slick-theme.css';
 const HighlightBar = () => {
     const settings = {
         dots: true,
-        infinite: false,
+        infinite: true,
         speed: 500,
         slidesToShow: 6,
         slidesToScroll: 2,
@@ -26,7 +26,7 @@ const HighlightBar = () => {
             {
                 breakpoint: 425,
                 settings: {
-                    slidesToShow: 2,
+                    slidesToShow: 3,
                     slidesToScroll: 2,
                     initialSlide: 2
                 }
