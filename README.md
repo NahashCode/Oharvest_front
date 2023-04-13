@@ -1,8 +1,9 @@
-# O'HARVEST (front)
-
-## creation du projet 
+![oharvest](../projet-02-o-harvest-front/src/assets/logo_oharvest.png)
+# Projet O'HARVEST (Front)
 ---
-
+## Création du projet 
+---
+#### Initialisation avec Vite
 ```
 # npm 7+, extra double-dash is needed:
 npm create vite@latest . -- --template react
@@ -11,7 +12,7 @@ npm create vite@latest . -- --template react
 yarn create vite . --template react
 ```
 
-## Activer la config eslint
+#### Activer la config eslint
 
 ```
 #yarn
@@ -20,10 +21,11 @@ yarn init @eslint/config
 #npm
 npm init @eslint/config
 ```
-
+---
 ## Responsive
+---
 
-Mobile widht: 320px - 425px
+#### Mobile widht: 320px - 425px
 
 ```
 @media only screen and (max-width: 425px) {
@@ -31,15 +33,15 @@ Mobile widht: 320px - 425px
 }
 ```
 
-Tablet width: 425px-1024px
+#### Tablet width: 425px - 1024px
 
 ```
-@media only screen and (max-width: 1024px) {
+@media only screen and (min-width: 425px) {
 
 }
 ```
 
-Desktop widht: 1024px - 1440px
+#### Desktop widht: 1024px - 1440px
 
 ```
 @media only screen and (min-width: 1024px) {
@@ -48,14 +50,14 @@ Desktop widht: 1024px - 1440px
 ```
 
 ---
----
-
 ## Travailler sur une nouvelle fonctionnalité
+---
+On se place sur la branche `dev` :
+```
+git checkout dev
+```
 
-On se crée une nouvelle branche pour développer la nouvelle fonctionnalité.
-
-On se place sur la branche `dev`
-
+On crée une nouvelle branche pour développer la nouvelle fonctionnalité :
 ```
 git checkout -b feat/<nom-de-la-fonctionnalité>
 ```
@@ -63,13 +65,12 @@ git checkout -b feat/<nom-de-la-fonctionnalité>
 Pour les commits, la convention est de commencer:
 - `feat:` pour l'ajout de fonctionnalités, style
 - `fix:` pour résoudre un bug
-- `doc:` pour tous ce concerne de la documentation
+- `doc:` pour tous ce qui concerne de la documentation
 - `config:` pour tous ce qui concerne des fichiers de configuration
 
-puis d'expliquer en quelques mots le travail réalisé (mentionner les composants/fichiers sur lesquel vous avez travailler)
+Puis d'expliquer en quelques mots le travail réalisé (mentionner les composants/fichiers sur lesquel vous avez travailler)
 
 Une fois le développement terminé et commité, on fait récupère les eventuelles modif:
-
 ```
 git pull origin feat/<nom-de-la-fonctionnalité>
 ```
