@@ -1,6 +1,6 @@
 import React from 'react';
 import './NavBar.scss';
-import logo from "../../assets/logo_oharvest.png";
+import logo from '../../assets/logo_oharvest.png';
 
 
 const NavBar = () => {

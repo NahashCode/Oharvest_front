@@ -1,6 +1,16 @@
 @use '../../styles/vars';
 
+
+
 .highlight {
-    border: vars.$primary-border;
-    color: vars.$alternative-color;
+    height: 120px;
+}
+
+.highlight__card {
+    height: 100px;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    margin: auto;
+    padding: 10px;
 }
