@@ -1,8 +1,9 @@
+import React from 'react';
 import Map from './Map/Map';
 import Horaire from './Horaire/Horaire';
-// import ContactInfo from './ContactInfo/Contactinfo';
+import ContactInfo from './ContactInfo/ContactInfo';
 
-// import './ContactSection.scss';
+import './ContactSection.scss';
 
 /* Contient la googleMap, les horaires, ainsi que les contacts */
 const ContactSection = () => {

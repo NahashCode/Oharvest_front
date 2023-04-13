@@ -3,7 +3,7 @@ import './Horaire.scss';
 const Horaire = () => {
     return (
         <div className="contact__horaire">
-            <h5>[icone montre] Les horaires</h5>
+            <h5><i class="fa-solid fa-clock"></i> Les horaires</h5>
             <table>
                 <tbody>
                     <tr>
