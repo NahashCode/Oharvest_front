@@ -1,44 +1,76 @@
 @use "../../styles/vars";
 
+/* ------------------------------------------------------ */
+/* Responsive CSS */
+/* ------------------------------------------------------ */
+/* Mobile responsive (320px-425px) */
+
 .navbar {
+  position: fixed;
+  bottom: 0;
   display: flex;
   align-items: center;
   background-color: vars.$background-color;
+  width: 100vw;
+  z-index: 9999;
 }
 
 .navbar__title {
   display: flex;
-  margin-left: auto;
+  width: 100vw;
+  // margin-left: auto;
 }
 
 .navbar__item {
   margin: 1rem;
+  text-align: center;
 }
 
 .navbar__item-link {
   color: vars.$primary-color;
+  text-align: center;
+  font-size: 1rem;
+  // font-weight: 500;
+  text-shadow: 0 0 0.1rem black;
 }
 
 .navbar__img {
-  width: 5vw;
-  height: 10vh;
-  margin: 0.8rem;
-  background-color: vars.$background-color;
+  width: 15vw;
+  height: auto;
 }
+
+/* Tablet responsive (425px-1024px) */
+
+@media only screen and (min-width: 425px) {
+  .navbar__item-link {
+    color: vars.$background-color;
+    text-align: center;
+    font-size: 1rem;
+    font-weight: 500;
+    text-shadow: 0 0 0.1rem white;
+  }
+}
+
+
 
 /* ------------------------------------------------------ */
 /* Responsive CSS */
 /* ------------------------------------------------------ */
 
-@media screen and (max-width: 520px) {
-  .navbar__link {
-    padding: 0.5rem;
-    text-align: center;
-  }
-  .navbar__img {
-    width: 25vw;
-    height: 10vh;
-    margin: 0.6rem;
-    background-color: vars.$background-color;
-  }
-}
+// @media screen and (max-width: 425px) {
+//   .navbar__link {
+//     padding: 0.5rem;
+//     text-align: center;
+//   }
+//   .navbar__img {
+//     width: 20vw;
+//     height: auto;
+//   }
+//   .navbar__item-link {
+//     color: vars.$primary-color;
+//   }
+//   .navbar {
+//     position: fixed;
+//     bottom: 100;
+//   }
+// }
