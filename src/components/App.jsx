@@ -12,13 +12,13 @@ import './App.scss';
 function App() {
 
     return (
-        <div className="App">
+        <div className="app">
             <Header />
+            <NavBar />
             <HighlightBar />
             <Welcome />
             <ContactSection />
             <Footer />
-            <NavBar />
         </div>
     );
  
