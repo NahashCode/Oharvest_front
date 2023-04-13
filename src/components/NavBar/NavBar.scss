@@ -13,18 +13,12 @@
 .navbar__link {
     margin: 15px;
     text-decoration: none;
-}
-
-a {
-    text-decoration: none;
     color: black;
 }
 
-img {
+.navbar__img {
     width: 80px;
     height: 80px;
-    margin: 10px;
-    background-color: rgb(187, 179, 179);
 }
 
 @media screen and (max-width: 520px) {
