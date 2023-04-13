@@ -16,7 +16,7 @@
 }
 
 /* Tablet responsive (425px-1024px) */
-/* If width < or = 425 pixels */
+/* If width > or = 425 pixels */
 @media only screen and (min-width: 425px) {
     .header {
         height: 40vh;
@@ -30,15 +30,15 @@
 /* If width > or = 1024 pixels */
 @media only screen and (min-width: 1024px) {
     .header {
-        height: 50vh;
+        height: 70vh;
         }
     .header__img {
-        height: 50vh;
+        height: 70vh;
         }
     }
 
 /* ------------------------------------------------------ */
-/* Normal CSS */
+/* Commun CSS */
 /* ------------------------------------------------------ */
 .header {
     position: relative;
