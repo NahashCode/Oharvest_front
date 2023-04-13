@@ -8,12 +8,17 @@
 .welcome__img {
     width:60vw;
     height: auto;
+    border-radius: 10px;
 }
 
 .welcome__title {
     padding: 0.4rem;
     font-size: 1rem;
-    background: vars.$background-color;
+    color: vars.$primary-color;
+    background-color: vars.$secundary-color;  
+    border-radius: 10px;
+    padding: 1rem;
+    margin-top: 1rem;
 }
 
 .welcome__description {
