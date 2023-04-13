@@ -14,6 +14,7 @@
 .navbar__link {
     margin: 15px;
     text-decoration: none;
+    color: vars.$primary-color;
 }
 
 a {
@@ -21,7 +22,7 @@ a {
     color: black;
 }
 
-img {
+.navbar__img {
     width: 80px;
     height: 80px;
     margin: 10px;

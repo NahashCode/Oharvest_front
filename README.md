@@ -1,6 +1,7 @@
 # O'HARVEST (front)
 
-## Creation du projet
+## creation du projet 
+---
 
 ```
 # npm 7+, extra double-dash is needed:

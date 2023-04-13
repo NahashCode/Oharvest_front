@@ -9,8 +9,8 @@ import './ContactSection.scss';
 const ContactSection = () => {
     return (
         <section className="contact">
-            <Map />
             <Horaire />
+            <Map />
             <ContactInfo />
         </section>
     );
