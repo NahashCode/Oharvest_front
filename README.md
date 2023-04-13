@@ -1,4 +1,4 @@
-![oharvest](../projet-02-o-harvest-front/src/assets/logo_oharvest.png)
+![oharvest](./src/assets/logo_oharvest_transparent.png)
 # Projet O'HARVEST (Front)
 ---
 ## Création du projet 
