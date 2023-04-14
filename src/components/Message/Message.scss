@@ -1,0 +1,35 @@
+@use "../../styles/vars";
+
+/* ------------------------------------------------------ */
+/* Responsive CSS */
+/* ------------------------------------------------------ */
+
+@media only screen and (max-width: 425px) {
+
+    .message__title {
+        background-color: vars.$color-banner-massage;
+        height: 5vh;
+    }
+    .message__p {
+        text-align: center;
+        padding-top: 0.7rem;
+    }
+
+}
+
+/* ------------------------------------------------------ */
+/* Normal CSS */
+/* ------------------------------------------------------ */
+
+@media only screen and (min-width: 425px) {
+
+    .message__title {
+        background-color: grey;
+        height: 7vh;
+    }
+    .message__p {
+        text-align: center;
+        padding-top: 1rem;
+        font-size: 1.5rem;
+    }
+}

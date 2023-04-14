@@ -1,6 +1,7 @@
 import React from 'react';
 
 import Header from './Header/Header';
+import Message from './Message/Message';
 import HighlightBar from './HighlightBar/HighlightBar';
 import HighlightBarFruits from './HighlightBarFruits/HighlightBarFruits';
 import HighlightBarLegumes from './HighlightBarLegumes/HighlightBarLegumes';
@@ -17,6 +18,7 @@ function App() {
     return (
         <div className="app">
             <Header />
+            <Message />
             <NavBar />
             <HighlightBar />
             <HighlightBarFruits />
