@@ -10,8 +10,10 @@ import Footer from './Footer/Footer';
 import Banner from './ProductPage/Banner/Banner';
 import CalendarHarvest from './ProductPage/CalendarHarvest/CalendarHarvest';
 import Particularity from './ProductPage/Particularity/Particularity';
+import Variety from './ProductPage/Variety/Variety';
 
 import './App.scss';
+
 
 
 function App() {
@@ -23,6 +25,7 @@ function App() {
             <Banner />
             <CalendarHarvest />
             <Particularity />
+            <Variety />
             {/*<HighlightBar />
             <Welcome />
             <ContactSection /> */}
