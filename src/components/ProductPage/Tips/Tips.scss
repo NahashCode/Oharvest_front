@@ -1,0 +1,74 @@
+@use "../../../styles/vars";
+
+/* ------------------------------------------------------ */
+/* Responsive CSS */
+/* ------------------------------------------------------ */
+
+/* Mobile responsive (320px-425px) */
+@media only screen and (max-width: 425px) {
+    .tips__button {
+        margin-bottom: 1rem;
+        padding: 10px 20px;
+        font-size: 1rem;
+    }
+
+    .tips__text {
+        font-size: 0.8rem;
+    }
+}
+
+/* Tablet responsive (425px-1024px) */
+@media only screen and (min-width: 425px) {
+    .tips__button {
+        margin: 1rem;
+        padding: 10px 20px;
+        font-size: 1.2rem;
+    }
+
+    .tips__text {
+        font-size: 1rem;
+    }
+}
+
+/* Desktop responsive (1024px-1440px) */
+@media only screen and (min-width: 1024px) {
+    .tips__button {
+        margin: 1rem;
+        padding: 10px 20px;
+        font-size: 1.3rem;
+    }
+
+    .tips__text {
+        font-size: 1.1rem;
+    }
+}
+
+/* ------------------------------------------------------ */
+/* Commun CSS */
+/* ------------------------------------------------------ */
+.tips__button {
+    background-color: vars.$alternative-color;
+    border: none;
+    border-radius: 10px;
+    color: white;
+}
+
+.tips__text {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s;
+    font-style: italic;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+/* ------------------------------------------------------ */
+/* Button click event & animation */
+/* ------------------------------------------------------ */
+.visible {
+    max-height: 100px;
+}
+
+.hidden {
+    max-height: 0;
+}
