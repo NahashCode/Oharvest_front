@@ -1,0 +1,51 @@
+@use "../../styles/vars";
+
+/* ------------------------------------------------------ */
+/* Responsive CSS */
+/* ------------------------------------------------------ */
+
+@media only screen and (max-width: 425px) {
+
+  .highlight__div-fruits {
+    margin-bottom: 0.7rem;
+  }
+  .highlight__title-fruits {
+    padding-top: 1.2rem;
+    text-align: center;
+    margin-bottom: 0.8rem;
+  }
+  .highlight__fruits {
+    height: 8vh;
+  }
+  .highlight__card-fruits {
+    height: 8vh;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    align-content: center;
+    border-radius: 50%;
+  }
+}
+
+/* ------------------------------------------------------ */
+/* Normal CSS */
+/* ------------------------------------------------------ */
+
+@media only screen and (min-width: 425px) {
+
+  .highlight__div-fruits {
+    margin-bottom: 0.7rem;
+  }
+  
+  .highlight__title-fruits {
+    padding-top: 0.7rem;
+    text-align: center;
+  }
+
+  .highlight__card-fruits {
+    margin: auto;
+    padding: 0.6rem;
+    height: 10vh;
+    border-radius: 50%;
+  }
+}
