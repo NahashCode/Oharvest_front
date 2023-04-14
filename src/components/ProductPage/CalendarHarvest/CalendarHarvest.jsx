@@ -2,7 +2,7 @@ import React from 'react';
 import './CalendarHarvest.scss';
 
 /**
- * Le calendrier des périodes de récolte du produit
+ * Le calendrier des périodes de récolte du produit par mois
  */
 const CalendarHarvest = () => {
     return (
@@ -10,7 +10,6 @@ const CalendarHarvest = () => {
             <table className='availability-table'>
                 <thead>
                     <tr>
-
                         <th>Jan</th>
                         <th>Fév</th>
                         <th>Mar</th>
@@ -27,7 +26,6 @@ const CalendarHarvest = () => {
                 </thead>
                 <tbody>
                     <tr>
-
                         <td className='unavailable'></td>
                         <td className='unavailable'></td>
                         <td className='unavailable'></td>

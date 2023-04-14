@@ -2,7 +2,7 @@ import React from 'react';
 import './Banner.scss';
 
 /**
- * Contient l'image du produit ainsi que le titre
+ * Contient l'image du produit ainsi que le titre inclus à l'intérieur
  */
 const Banner = () => {
     return (
