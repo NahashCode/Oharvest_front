@@ -1,0 +1,19 @@
+@use '../../styles/vars';
+
+.crop-table {
+    width: 83%;
+
+    & table {
+        width: 100%;
+    }
+
+    &__header {
+        width: 100%;
+        border-bottom: 1px solid vars.$primary-color;
+    }
+
+    &__row {
+        border-bottom: 1px solid vars.$primary-color;
+        text-align: center;
+    }
+}
