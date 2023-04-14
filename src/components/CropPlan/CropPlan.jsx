@@ -37,7 +37,7 @@ const CropPlan = ({data}) => {
                 <Rectangle key={plot.id} bounds={plot.coordinates} pathOptions={options}>
                     <Tooltip direction="top" offset={[0, 20]} opacity={1} sticky>
                         <ul>
-                            {plot.products.map(product => (<li>{product.name}</li>))}
+                            {plot.products.map(product => (<li key={product.id}>{product.name}</li>))}
                         </ul>
                     </Tooltip>
                 </Rectangle>
