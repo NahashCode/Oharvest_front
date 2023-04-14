@@ -16,7 +16,7 @@ const Tips = () => {
             </button>
             <p className={`tips__text ${showTips ? 'visible' : 'hidden'}`}>
         Voici quelques astuces pour vous aider...
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla officia, excepturi voluptas quis illum aspernatur perspiciatis est officiis eum dolorem qui harum eligendi ratione eius eveniet ipsum blanditiis sequi repellendus.
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla officia, excepturi voluptas quis illum aspernatur perspiciatis est officiis eum dolorem.
             </p>
         </div>
     );
