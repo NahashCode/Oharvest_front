@@ -5,29 +5,25 @@
 /* ------------------------------------------------------ */
 
 /* Mobile responsive (320px-425px) */
-/* If width < or = 425 pixels */
 @media only screen and (max-width: 425px) {
-    
+    /* nothing to use */
 }
 
 /* Tablet responsive (425px-1024px) */
-/* If width > or = 425 pixels */
 @media only screen and (min-width: 425px) {
-    
+    /* nothing to use */
 }
 
 /* Desktop responsive (1024px-1440px) */
-/* If width > or = 1024 pixels */
 @media only screen and (min-width: 1024px) {
-    
+    /* nothing to use */
 }
 
 /* ------------------------------------------------------ */
 /* Commun CSS */
 /* ------------------------------------------------------ */
 .calendar {
-    display: block;
-    width: 100%;
+    display: flex;
     overflow-x: auto;
     margin-top: 1rem;
     margin-bottom: 1rem;
@@ -52,16 +48,14 @@
     padding: 0.6rem;
 }
 
-
-
-.availability-table .available {
+.available {
     background-color: #52ac55;
 }
 
-.availability-table .shortly {
+.shortly {
     background-color: #f0863f;
 }
 
-.availability-table .unavailable {
+.unavailable {
     background-color: #ee5252;
 }
