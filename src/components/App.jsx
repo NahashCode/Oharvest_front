@@ -8,9 +8,9 @@ import NavBar from './NavBar/NavBar';
 import Footer from './Footer/Footer';
 
 import Banner from './ProductPage/Banner/Banner';
+import CalendarHarvest from './ProductPage/CalendarHarvest/CalendarHarvest';
 
 import './App.scss';
-
 
 function App() {
 
@@ -19,6 +19,7 @@ function App() {
             <Header />
             <NavBar />
             <Banner />
+            <CalendarHarvest />
 {/*             <HighlightBar />
             <Welcome />
             <ContactSection /> */}
