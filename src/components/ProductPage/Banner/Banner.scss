@@ -1,0 +1,86 @@
+@use "../../../styles/vars";
+
+/* ------------------------------------------------------ */
+/* Responsive CSS */
+/* ------------------------------------------------------ */
+
+/* Mobile responsive (320px-425px) */
+/* If width < or = 425 pixels */
+@media only screen and (max-width: 425px) {
+    .banner {
+        margin: 0.7rem;
+    }
+    
+    .banner__img {
+        width:80vw;
+    }
+
+    .banner__title {
+        font-size: 1.7rem;
+    }
+}
+
+/* Tablet responsive (425px-1024px) */
+/* If width > or = 425 pixels */
+@media only screen and (min-width: 425px) {
+    .banner {
+        margin: 1rem;
+    }
+    
+    .banner__img {
+        width:80vw;
+    }
+
+    .banner__title {
+        font-size: 2rem;
+    }
+}
+
+/* Desktop responsive (1024px-1440px) */
+/* If width > or = 1024 pixels */
+@media only screen and (min-width: 1024px) {
+    .banner {
+        margin: 2rem;
+    }
+    
+    .banner__img {
+        width:60vw;
+    }
+
+    .banner__title {
+        font-size: 2.3rem;
+    }
+}
+
+/* ------------------------------------------------------ */
+/* Commun CSS */
+/* ------------------------------------------------------ */
+.banner {
+    display: flex;
+    justify-content: center;
+}
+
+.banner__img-container {
+    position: relative;
+    display: inline-block;
+}
+
+.banner__img {
+    display: block;
+    height: auto;
+}
+
+.banner__title-container {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 0.5rem;
+    background-image: linear-gradient(transparent, rgba(0, 0, 0, 2));
+}
+
+.banner__title {
+    color: white;
+    text-align: center;
+    margin: 0;   
+}
