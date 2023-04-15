@@ -1,34 +1,56 @@
 @use "../../styles/vars";
 
-/* ------------------------------------------------------ */
-/* Normal CSS */
-/* ------------------------------------------------------ */
 
-.highlight {
-  height: 15vh;
-}
-
-.highlight__card {
-  height: 12vh;
-  justify-content: center;
-  align-items: center;
-  align-content: center;
-  margin: auto;
-  padding: 0.6rem;
-}
 
 /* ------------------------------------------------------ */
 /* Responsive CSS */
 /* ------------------------------------------------------ */
 
 @media screen and (max-width: 425px) {
+
   .highlight {
-    height: 8vh;
+    height: 12vh;
+    margin-bottom: 0.7rem;
   }
+
+  .highlight__title {
+    margin-bottom: 0.9rem;
+    text-align: center;
+  }
+
   .highlight__card {
     height: 6vh;
+    margin: auto;
+    border-radius: 50%;
+  }
+}
+
+/* ------------------------------------------------------ */
+/* Normal CSS */
+/* ------------------------------------------------------ */
+@media only screen and (min-width: 425px) {
+
+  .highlight {
+    height: 20vh;
+    margin-bottom: 2rem;
+  }
+
+  .highlight__title {
+    text-align: center;
+    font-size: 1.8rem;
+    margin-bottom: 0.7rem;
+  }
+
+  .highlight__div {
+  }
+
+  .highlight__card {
+    height: 12vh;
     justify-content: center;
     align-items: center;
     align-content: center;
+    margin: auto;
+    padding: 0.6rem;
+    border-radius: 50%;
   }
 }
