@@ -45,15 +45,6 @@ const HighlightBar = (props) => {
     };
     return (
         <div>
-            {/* <Slider {...settings}>
-                {images.map((item) => (
-                    <div key={ item.id } className="highlight">
-                        <div >
-                            <img className="highlight__card" src={item.link} />
-                        </div>
-                    </div>
-                ))}
-            </Slider> */}
             <div className='highlight'>
                 <h2 className='highlight__title'>FRUITS</h2>
                 <Slider {...settings}>
