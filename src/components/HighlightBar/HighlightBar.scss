@@ -15,6 +15,7 @@
 
   .highlight__title {
     margin-bottom: 0.9rem;
+    margin-top: 0.4rem;
     text-align: center;
   }
 
@@ -41,16 +42,20 @@
     margin-bottom: 0.7rem;
   }
 
-  .highlight__div {
-  }
-
   .highlight__card {
-    height: 12vh;
+    height: 8vh;
     justify-content: center;
     align-items: center;
     align-content: center;
     margin: auto;
     padding: 0.6rem;
     border-radius: 50%;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+
+  .highlight__card {
+    height: 12vh;
   }
 }
