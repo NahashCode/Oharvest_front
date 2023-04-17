@@ -59,6 +59,15 @@
     margin-top: 1rem;
 }
 
+.variety__name {
+    text-align: center;
+    color: white;
+    padding: 0.4rem;
+    margin-top: 1rem;
+    background-color: vars.$alternative-color;  
+    border-radius: 10px;
+}
+
 .variety__description {
     text-align: center;
 }

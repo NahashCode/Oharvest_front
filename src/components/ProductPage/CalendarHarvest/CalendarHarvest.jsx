@@ -1,9 +1,11 @@
-import React from 'react';
-import './CalendarHarvest.scss';
-
 /**
  * Le calendrier des périodes de récolte du produit par mois
  */
+
+import React from 'react';
+import './CalendarHarvest.scss';
+
+
 const CalendarHarvest = () => {
     return (
         <div className='calendar'>

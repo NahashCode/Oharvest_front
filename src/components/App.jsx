@@ -1,7 +1,7 @@
 import React from 'react';
 
 import Header from './Header/Header';
-import HighlightBar from './HighlightBar/HighlightBar';
+/* import HighlightBar from './HighlightBar/HighlightBar'; */
 import Welcome from './Welcome/Welcome';
 import ContactSection from './ContactSection/ContactSection';
 import NavBar from './NavBar/NavBar';
@@ -34,7 +34,7 @@ function App() {
             <Particularity />
             <Variety />
             <Tips />
-            <HighlightBar />
+            {/* <HighlightBar /> */}
             <Welcome />
             <ContactSection />
             <Footer />
