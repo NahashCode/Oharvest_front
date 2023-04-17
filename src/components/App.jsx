@@ -7,14 +7,16 @@ import ContactSection from './ContactSection/ContactSection';
 import NavBar from './NavBar/NavBar';
 import Footer from './Footer/Footer';
 
+import ProductPage from './ProductPage/ProductPage';
+
 /* ---------------------------------------------------------
 Update Andréa
 ---------------------------------------------------------- */
-import Banner from './ProductPage/Banner/Banner';
+/* import Banner from './ProductPage/Banner/Banner';
 import CalendarHarvest from './ProductPage/CalendarHarvest/CalendarHarvest';
 import Particularity from './ProductPage/Particularity/Particularity';
 import Variety from './ProductPage/Variety/Variety';
-import Tips from './ProductPage/Tips/Tips';
+import Tips from './ProductPage/Tips/Tips'; */
 /* -------------------------------------------------------------
 -------------------------------------------------------------- */
 
@@ -29,11 +31,7 @@ function App() {
         <div className="app">
             <Header />
             <NavBar />
-            <Banner />
-            <CalendarHarvest />
-            <Particularity />
-            <Variety />
-            <Tips />
+            <ProductPage />
             {/* <HighlightBar /> */}
             <Welcome />
             <ContactSection />

@@ -1,12 +1,11 @@
-/**
- * La section des variétés de produits
- */
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
 import './Variety.scss';
 
-
+/**
+ * Variety for each product
+ */
 const Variety = () => {
     const [variety, setVariety] = useState(null);
 
@@ -18,8 +17,8 @@ const Variety = () => {
                         'accept': 'application/json',
                     },
                 });
-
                 setVariety(response.data);
+
             } catch (error) {
                 console.error('Erreur lors de la récupération des données:', error);
             }
