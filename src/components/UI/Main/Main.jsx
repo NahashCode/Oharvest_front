@@ -1,3 +1,4 @@
+import CropBloc from '../../CropBloc/CropBloc';
 import CropPlan from '../../CropPlan/CropPlan';
 import CropTable from '../../CropTable/CropTable';
 //import HighlightBar from '../../HighlightBar/HighlightBar';
@@ -6,14 +7,13 @@ import CropTable from '../../CropTable/CropTable';
 
 import './Main.scss';
 
-const Main = ({plots}) => {
+const Main = () => {
     return (
         <main className="content">
             {/*<HighlightBar />
             <Welcome />
             <ContactSection />*/}
-            <CropPlan data={plots}/>
-            <CropTable data={plots}/>
+            <CropBloc />
         </main>
     );
 };
