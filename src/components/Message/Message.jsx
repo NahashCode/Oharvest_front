@@ -1,4 +1,5 @@
 import './Message.scss';
+import React from 'react';
 
 // banner for open or closed store information
 

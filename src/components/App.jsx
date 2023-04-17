@@ -2,7 +2,6 @@ import React from 'react';
 
 import Header from './Header/Header';
 import Message from './Message/Message';
-import HighlightBar from './HighlightBar/HighlightBar';
 import Welcome from './Welcome/Welcome';
 import ContactSection from './ContactSection/ContactSection';
 import NavBar from './NavBar/NavBar';
@@ -18,7 +17,6 @@ function App() {
             <Header />
             <Message />
             <NavBar />
-            <HighlightBar />
             <Caroussel />
             <Welcome />
             <ContactSection />
