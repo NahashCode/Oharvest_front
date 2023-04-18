@@ -33,30 +33,26 @@ const CropTable = ({data}) => {
     );
 };
 
+
 CropTable.propTypes = {
-    data: PropTypes.exact({
-        plotId: PropTypes.number.isRequired,
-        products: PropTypes.exact({
-            id: PropTypes.number.isRequired,
-            name: PropTypes.string.isRequired,
-            isAvailable: PropTypes.bool.isRequired,
-            image: PropTypes.string.isRequired,
-            feature: PropTypes.string.isRequired,
-            trick: PropTypes.string.isRequired,
-            harvestBeginAt: PropTypes.oneOfType([
-                PropTypes.string.isRequired,
-                PropTypes.object.isRequired,
-            ]),
-            harvestEndAt: PropTypes.oneOfType([
-                PropTypes.string.isRequired,
-                PropTypes.object.isRequired,
-            ]),
-            category: PropTypes.exact({
-                id: PropTypes.number.isRequired,
-                name: PropTypes.string.isRequired
-            })
+    data: PropTypes.arrayOf(
+        PropTypes.exact({
+            plotId: PropTypes.number.isRequired,
+            coordinate: PropTypes.arrayOf(
+                PropTypes.arrayOf(
+                    PropTypes.number.isRequired,
+                )
+            ),
+            product: PropTypes.arrayOf(
+                PropTypes.exact({
+                    id: PropTypes.number.isRequired,
+                    name: PropTypes.string.isRequired,
+                    isAvailable: PropTypes.bool.isRequired,
+                    image: PropTypes.string.isRequired,
+                }),
+            ),
         }),
-    }),
-};
+    ),
+}
 
 export default CropTable;
