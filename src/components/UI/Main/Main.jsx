@@ -1,19 +1,18 @@
 import CropBloc from '../../CropBloc/CropBloc';
-import CropPlan from '../../CropBloc/CropPlan/CropPlan';
-import CropTable from '../../CropBloc/CropTable/CropTable';
-//import HighlightBar from '../../HighlightBar/HighlightBar';
-//import Welcome from '../../Welcome';
-//import ContactSection from '../../ContactSection/ContactSection';
+import Home from '../../Home/Home';
+import { Routes, Route } from 'react-router-dom';
 
 import './Main.scss';
 
 const Main = () => {
     return (
         <main className="content">
-            {/*<HighlightBar />
-            <Welcome />
-            <ContactSection />*/}
-            <CropBloc />
+            <Routes>
+                <Route path="/" element={<Home />}/>
+                <Route path="/map" element={<CropBloc />}/>
+                <Route path="/products" element={<ProductPage />}/>
+                <Route path="/map" element={<Caroussel />}/>
+            </Routes>
         </main>
     );
 };
