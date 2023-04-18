@@ -1,5 +1,5 @@
-import CropBloc from '../../CropBloc/CropBloc';
-import Home from '../../Home/Home';
+import CropPage from '../../CropPage/CropPage';
+import HomePage from '../../HomePage/HomePage';
 import { Routes, Route } from 'react-router-dom';
 
 import './Main.scss';
@@ -8,10 +8,10 @@ const Main = () => {
     return (
         <main className="content">
             <Routes>
-                <Route path="/" element={<Home />}/>
-                <Route path="/map" element={<CropBloc />}/>
-                <Route path="/products" element={<ProductPage />}/>
-                <Route path="/map" element={<Caroussel />}/>
+                <Route path="/" element={<HomePage />}/>
+                <Route path="/map" element={<CropPage />}/>
+                <Route path="/products/:id" element={<ProductPage />}/>
+                <Route path="/products" element={<ProductsListPage />}/>
             </Routes>
         </main>
     );
