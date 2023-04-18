@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import './HighlightBar.scss';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
@@ -61,6 +62,11 @@ const HighlightBar = ({products, category}) => {
             </div>
         </div>
     );
+};
+
+HighlightBar.propTypes = {
+    products: PropTypes.array.isRequired, 
+    category: PropTypes.object.isRequired,
 };
 
 export default HighlightBar;
