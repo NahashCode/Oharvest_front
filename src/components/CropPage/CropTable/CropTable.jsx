@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types';
+
 import './CropTable.scss';
 
 const CropTable = ({data}) => {
@@ -29,6 +31,32 @@ const CropTable = ({data}) => {
             </table>
         </div>
     );
+};
+
+CropTable.propTypes = {
+    data: PropTypes.exact({
+        plotId: PropTypes.number.isRequired,
+        products: PropTypes.exact({
+            id: PropTypes.number.isRequired,
+            name: PropTypes.string.isRequired,
+            isAvailable: PropTypes.bool.isRequired,
+            image: PropTypes.string.isRequired,
+            feature: PropTypes.string.isRequired,
+            trick: PropTypes.string.isRequired,
+            harvestBeginAt: PropTypes.oneOfType([
+                PropTypes.string.isRequired,
+                PropTypes.object.isRequired,
+            ]),
+            harvestEndAt: PropTypes.oneOfType([
+                PropTypes.string.isRequired,
+                PropTypes.object.isRequired,
+            ]),
+            category: PropTypes.exact({
+                id: PropTypes.number.isRequired,
+                name: PropTypes.string.isRequired
+            })
+        }),
+    }),
 };
 
 export default CropTable;
