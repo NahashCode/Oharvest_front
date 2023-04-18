@@ -1,10 +1,10 @@
-/**
- * Products image, and title
- */
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import './Banner.scss';
 
+
+//Products image and title inside it
 const Banner = ({image, name}) => {
     return (
         <div className="banner">
@@ -16,6 +16,12 @@ const Banner = ({image, name}) => {
             </div>
         </div>
     );
+};
+
+// Props validation
+Banner.propTypes = {
+    image: PropTypes.string.isRequired,
+    name: PropTypes.string.isRequired,
 };
 
 export default Banner;

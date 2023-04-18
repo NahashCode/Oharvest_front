@@ -8,8 +8,11 @@ import Tips from './Tips/Tips';
 
 import './ProductPage.scss';
 
+/* Container component for the Product page 
+(Banner/CalendarHArvest/Particularity/Variety/Tips) */
 const ProductPage = () => {
     const [product, setProduct] = useState({});
+    const [varieties, setVarieties] = useState({});
     const [isLoading, setisLoading] = useState(true);
     const url = 'http://kevin-hesse-server.eddi.cloud/api';
 
@@ -27,10 +30,24 @@ const ProductPage = () => {
                 console.error('Erreur lors de la récupération des données:', error);
             }
         };
+        fetchData();
+    }, []);
 
-        setTimeout(() => {
-            fetchData();
-        }, 3000);
+    useEffect(() => {
+        const fetchData = async () => {
+            try {
+                const response = await axios.get(url + '/varieties/1', {
+                    headers: {
+                        'accept': 'application/json',
+                    },
+                });
+                setVarieties(response.data);
+                setisLoading(false);
+            } catch (error) {
+                console.error('Erreur lors de la récupération des données:', error);
+            }
+        };
+        fetchData();
     }, []);
     
     return (
@@ -40,8 +57,8 @@ const ProductPage = () => {
                 <Banner name={product.name} image={product.image} />
                 <CalendarHarvest startingDate={product.harvestBeginAt} endingDate={product.harvestEndAt} />
                 <Particularity feature={product.feature} />
-                <Variety />
-                <Tips />
+                <Variety name={varieties.name} feature={varieties.product.feature}/>
+                <Tips trick={product.trick}/>
             </>)}
         </>
     );

@@ -1,10 +1,10 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import './Particularity.scss';
 
-/**
- * Particularity and description of each product
- */
+
+//Particularity and description of each product
 const Particularity = ({feature}) => {
     return (
         <div className='particularity'>
@@ -12,6 +12,11 @@ const Particularity = ({feature}) => {
             <p className='particularity__description' >{feature}</p>
         </div>
     );
+};
+
+// Props validation
+Particularity.propTypes = {
+    feature: PropTypes.string.isRequired,
 };
 
 export default Particularity;

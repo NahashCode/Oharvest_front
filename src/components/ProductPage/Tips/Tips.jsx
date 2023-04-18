@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 
 import './Tips.scss';
 
-/* Page des Astuces */
+//Tips component with event button
 const Tips = ({trick}) => {
     const [showTips, setShowTips] = useState(false);
 
@@ -21,6 +22,11 @@ const Tips = ({trick}) => {
             </p>
         </div>
     );
+};
+
+// Props validation
+Tips.propTypes = {
+    trick: PropTypes.string.isRequired,
 };
 
 export default Tips;

@@ -1,9 +1,9 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+
 import './CalendarHarvest.scss';
 
-/**
- * Le calendrier des périodes de récolte du produit par mois
- */
+//Calendar harvest product per month
 const CalendarHarvest = ({startingDate, endingDate}) => {
     const startingMonth = new Date(startingDate).getMonth(); //0
     const endingMonth = new Date(endingDate).getMonth(); //5
@@ -45,6 +45,12 @@ const CalendarHarvest = ({startingDate, endingDate}) => {
             </table>
         </div>
     );
+};
+
+// Props validation
+CalendarHarvest.propTypes = {
+    startingDate: PropTypes.string.isRequired,
+    endingDate: PropTypes.string.isRequired,
 };
 
 export default CalendarHarvest;
