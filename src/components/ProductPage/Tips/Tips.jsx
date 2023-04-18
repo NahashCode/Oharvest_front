@@ -15,7 +15,7 @@ const Tips = ({trick}) => {
     return (
         <div className='tips' >
             <button className="tips__button" onClick={handleButtonClick}>
-                Envie d'astuces...?
+                Des astuces...?
             </button>
             <p className={`tips__text ${showTips ? 'visible' : 'hidden'}`}>
                 Voici quelques astuces pour vous aider...{trick}
