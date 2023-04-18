@@ -1,12 +1,11 @@
 import React from 'react';
 
 import Header from './Header/Header';
-import Message from './Message/Message';
 import Welcome from './Welcome/Welcome';
 import ContactSection from './ContactSection/ContactSection';
 import NavBar from './NavBar/NavBar';
 import Footer from './Footer/Footer';
-import Caroussel from './Caroussel/Caroussel';
+import ProductsListPage from './ProductsListPage/ProductsListPage';
 
 import './App.scss';
 
@@ -15,9 +14,8 @@ function App() {
     return (
         <div className="app">
             <Header />
-            <Message />
             <NavBar />
-            <Caroussel />
+            <ProductsListPage />
             <Welcome />
             <ContactSection />
             <Footer />
