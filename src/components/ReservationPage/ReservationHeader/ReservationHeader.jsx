@@ -3,7 +3,7 @@ import React from 'react';
 import './ReservationHeader.scss';
 
 
-//Products image and title inside it
+//Reservation image and title inside it
 const ReservationHeader = () => {
     return (
         <div className="reservation-header">

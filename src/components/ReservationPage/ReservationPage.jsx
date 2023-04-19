@@ -7,6 +7,7 @@ import ReservationCalendar from '.ReservationCalendar/ReservationCalendar'; */
 
 import ReservationHeader from './ReservationHeader/ReservationHeader';
 import ReservationModality from './ReservationModality/ReservationModality';
+import ReservationTheme from './ReservationTheme/ReservationTheme';
 
 /* 
 |* Container component for the ReservationPage (Header/Theme/Calendar)
@@ -17,8 +18,8 @@ const ReservationPage = () => {
         <>
             <ReservationHeader />
             <ReservationModality />
-            {/*<ReservationTheme />
-                <ReservationCalendar /> */}
+            <ReservationTheme />
+            {/* <ReservationCalendar /> */}
 
         </>
     );

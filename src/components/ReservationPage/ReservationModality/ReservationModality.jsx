@@ -2,6 +2,7 @@ import React from 'react';
 
 import './ReservationModality.scss';
 
+//Section with the modality and description for the visit
 const ReservationModality = () => {
     return (
         <div className='modality'>
