@@ -135,3 +135,10 @@
     background-color: rgba(175, 79, 76, 0.5);
     color: white;
 }
+.react-datepicker__day--disabled {
+    color: #ccc;
+}
+.react-datepicker__day--disabled:hover {
+    background-color: rgba(175, 79, 76, 0.5);
+    color: white;
+}
