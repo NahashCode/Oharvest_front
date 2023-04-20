@@ -41,6 +41,22 @@
     color: vars.$background-color;
     text-shadow: 0 0 0.1rem rgb(0, 0, 0);
   }
+
+  .notfound__return {
+    display: flex;
+    justify-content: space-around;
+  }
+
+  .notfound__return-link {
+    text-align: center;
+    border: 2px solid vars.$secundary-color;
+    border-radius: 10px;
+    font-size: 1.2rem;
+    padding: 3px;
+    font-weight: 800;
+    width: 60%;
+    color: vars.$secundary-color;
+  }
 }
 
 /* Tablet responsive (425px-1024px) */
@@ -73,6 +89,22 @@
     color: vars.$background-color;
     text-shadow: 0 0 0.1rem rgb(0, 0, 0);
   }
+
+  .notfound__return {
+    display: flex;
+    justify-content: space-around;
+  }
+
+  .notfound__return-link {
+    text-align: center;
+    border: 2px solid vars.$secundary-color;
+    border-radius: 10px;
+    font-size: 1.2rem;
+    padding: 3px;
+    font-weight: 800;
+    color: vars.$secundary-color;
+    width: 25%;
+  }
 }
 
 /* Desktop (1024px-1440px) */
@@ -90,5 +122,9 @@
 
   .notfound__section {
   height: 35rem;
+  }
+
+  .notfound__return-link {
+    width: 15%;
   }
 }
