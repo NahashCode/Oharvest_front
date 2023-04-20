@@ -6,9 +6,12 @@
 /* Mobile responsive (320px-425px) */
 
 @media only screen and (max-width: 425px) {
+  .notfound {
+    margin-top: -20px;
+  }
 
   .notfound__div {
-    height: 10rem;
+    height: 5rem;
   }
 
   .notfound__div-title {
@@ -24,7 +27,6 @@
     display: flex;
     align-items: center;
     flex-direction: column;
-    padding-bottom: 10rem;
     justify-content: space-around;
   }
 
@@ -44,17 +46,17 @@
 /* Tablet responsive (425px-1024px) */
 
 @media only screen and (min-width: 425px) {
-
-    .notfound__div-title {
+  
+  .notfound__div-title {
     color: vars.$background-color;
     text-shadow: 0 0 0.1rem rgb(0, 0, 0);
     font-size: 2.5rem;
     text-align: center;
-    padding-top: 12.5rem;
+    padding-top: 1rem;
   }
 
   .notfound__section {
-    height: 37rem;
+    height: 20rem;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -76,13 +78,17 @@
 /* Desktop (1024px-1440px) */
 
 @media only screen and (min-width: 1024px) {
-
   .notfound__div-title {
     font-size: 3.8rem;
-    padding-top: 8rem;
+    padding-top: 4rem;
   }
 
   .notfound__section-p {
     font-size: 18.8rem;
+    height: 20rem;
+  }
+
+  .notfound__section {
+  height: 35rem;
   }
 }

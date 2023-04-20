@@ -1,13 +1,11 @@
 import React from 'react';
 import img from '../../assets/carrot-in-plate.png';
-import NavBar from '../NavBar/NavBar';
 
 import './NotFound.scss';
 
 const NotFound = () => {
     return (
         <div className='notfound'>
-            <NavBar />
             <div className='notfound__div'>
                 <p className="notfound__div-title">OUPSSS...</p>
             </div>
