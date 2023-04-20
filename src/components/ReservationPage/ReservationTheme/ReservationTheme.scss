@@ -17,7 +17,12 @@
     }
 
     .theme__description {
-        margin: 1rem;
+        margin: 0.5rem;
+        font-size: 0.8rem;
+    }
+
+    .theme__activity {
+        margin: 0.5rem;
         font-size: 0.8rem;
     }
 }
@@ -38,6 +43,11 @@
         margin: 1.4rem;
         font-size: 1.2rem;
     }
+
+    .theme__activity{
+        margin: 1.4rem;
+        font-size: 1.2rem;
+    }
 }
 
 /* Desktop responsive (1024px-1440px) */
@@ -52,6 +62,11 @@
     }
 
     .theme__description {
+        margin: 1.4rem;
+        font-size: 1.3rem;
+    }
+
+    .theme__activity {
         margin: 1.4rem;
         font-size: 1.3rem;
     }
@@ -75,30 +90,60 @@
     margin-top: 1rem;
 }
 
+.theme__container-spring {
+    border: 1px solid vars.$spring-color;
+    border-radius: 10px;
+    padding: 0.4rem;
+    margin-top: 0.7rem;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+}
+
 .theme__spring {
     text-align: center;
     color: rgb(255, 255, 255);
-    margin-top: 1rem;
-    background-color: rgba(74, 173, 54, 0.986);  
+    margin-top: 0.4rem;
+    background-color: vars.$spring-color;  
     border-radius: 10px;
+}
+
+.theme__container-summer {
+    border: 1px solid vars.$summer-color;
+    border-radius: 10px;
+    padding: 0.4rem;
+    margin-top: 0.7rem;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
 }
 
 .theme__summer {
     text-align: center;
     color: white;
-    margin-top: 1rem;
-    background-color: rgb(228, 127, 33); 
+    margin-top: 0.4rem;
+    background-color: vars.$summer-color; 
     border-radius: 10px;
+}
+
+.theme__container-automn {
+    border: 1px solid vars.$automn-color;
+    border-radius: 10px;
+    padding: 0.4rem;
+    margin-top: 0.7rem;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+
 }
 
 .theme__automn {
     text-align: center;
     color: white;
-    margin-top: 1rem;
-    background-color: rgb(107, 58, 18);  
+    margin-top: 0.4rem;
+    background-color: vars.$automn-color;  
     border-radius: 10px;
 }
 
 .theme__description {
     text-align: center;
+}
+
+.theme__activity {
+    margin-top: 0.1rem;
+    margin-bottom: 0.1rem;
 }

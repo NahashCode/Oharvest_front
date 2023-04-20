@@ -45,8 +45,21 @@
     margin-top: 1rem;
 }
 
+.calendar__description {
+    margin: 1rem;
+    text-align: center;
+}
+
+.calendar__select {
+    margin: 1rem;
+    border: 1px solid vars.$calendar-color;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    padding: 1rem;
+    border-radius: 10px;
+}
+
 .calendar__button {
-    background-color: #4caf50;
+    background-color: vars.$calendar-color;
     border: none;
     padding: 0.7rem;
     border-radius: 10px;
@@ -56,8 +69,6 @@
     background-color: vars.$alternative-color;
     color: white;
 }
-
-
 
 /* ------------------------------------------------------ */
 /* Calendar Style by REACT DatePicker
@@ -72,7 +83,7 @@
 
 //Header's calendar
 .react-datepicker__header {
-    background-color: #4caf50;
+    background-color: vars.$calendar-color;
     color: white;
     font-size: 1rem;
     border-top-left-radius: 10px;
@@ -100,18 +111,27 @@
 //Number of the day
 .react-datepicker__day,
 .react-datepicker__day--outside-month {
-    color: #26992a;
+    color: vars.$calendar-color;
+    font-weight: bold;
 }
 
 //When day are selected
 .react-datepicker__day--selected,
 .react-datepicker__day--selected:hover {
-    background-color: #4caf50;
+    background-color: vars.$calendar-color;
     color: white;
 }
 
 //When day are hovered
 .react-datepicker__day:hover {
     background-color: rgba(76, 175, 80, 0.5);
+    color: white;
+}
+
+.react-datepicker__day--weekend {
+    color: #ccc;
+}
+.react-datepicker__day--weekend:hover {
+    background-color: rgba(175, 79, 76, 0.5);
     color: white;
 }

@@ -1,4 +1,3 @@
-/* eslint-disable quotes */
 import React, { useState } from 'react';
 import DatePicker from 'react-datepicker';
 import { format } from 'date-fns';
@@ -8,32 +7,66 @@ import 'react-datepicker/dist/react-datepicker.css';
 
 import './ReservationCalendar.scss';
 
-
-//Calendar for school reservation & visit
 const ReservationCalendar = () => {
-    const [selectedDate, setSelectedDate] = useState(null);
-    
+    const [selectedDate, setSelectedDate] = useState();
+    const [selectedTimeSlot, setSelectedTimeSlot] = useState();
+
     const handleDateChange = (date) => {
         setSelectedDate(date);
     };
 
-    const handleReserve = () => {
-        //! ICI logique de réservation et navigation vers la nouvelle page
-        console.log(`Date réservée: ${format(selectedDate, 'yyyy-MM-dd')}`);
+    const handleTimeSlotChange = (event) => {
+        setSelectedTimeSlot(event.target.value);
     };
-    registerLocale("fr", fr);
+
+    const handleReserve = () => {
+        if (selectedTimeSlot) {
+            console.log(
+                `Date et créneau réservés: ${format(
+                    selectedDate,
+                    'yyyy-MM-dd'
+                )} - ${selectedTimeSlot}`
+            );
+        } else {
+            console.log('Veuillez sélectionner un créneau horaire');
+        }
+    };
+
+    const isWeekday = (date) => {
+        const day = date.getDay();
+        return day !== 0 && day !== 6;
+    };
+
+    registerLocale('fr', fr);
 
     return (
         <div className='calendar'>
             <h1 className='calendar__title'>Calendrier de réservation</h1>
+            <h2 className='calendar__description' >Cliquez sur une date du calendrier, puis sélectionnez votre créneau horaire</h2>
             <DatePicker
                 selected={selectedDate}
                 onChange={handleDateChange}
                 inline
                 locale="fr"
+                filterDate={isWeekday}
+                dayClassName={(date) => (isWeekday(date) ? '' : 'react-datepicker__day--weekend')}
             />
             {selectedDate && (
-                <button className='calendar__button' onClick={handleReserve}>Réserver la date sélectionnée</button>
+                <>
+                    <h2 className="calendar__subtitle">Sélectionnez un créneau horaire</h2>
+                    <select
+                        value={selectedTimeSlot}
+                        onChange={handleTimeSlotChange}
+                        className="calendar__select"
+                    >
+                        <option value="">Choisissez un créneau horaire</option>
+                        <option value="matin">Matin</option>
+                        <option value="apresMidi">Après-midi</option>
+                    </select>
+                </>
+            )}
+            {selectedDate && selectedTimeSlot && (
+                <button className='calendar__button' onClick={handleReserve}>Réserver la date et le créneau sélectionnés</button>
             )}
         </div>
     );
