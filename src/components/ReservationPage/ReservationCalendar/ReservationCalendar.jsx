@@ -78,7 +78,8 @@ Utility function
 
     return (
         <div className="calendar">
-            <h1 className="calendar__title">Calendrier de réservation</h1>
+            <h1 className="calendar__title">Calendrier de réservations</h1>
+            <h2 className='calendar__description'>Choisissez la date de votre visite</h2>
             <DatePicker
                 selected={selectedDate}
                 onChange={handleDateChange}
@@ -88,7 +89,7 @@ Utility function
             />
             {selectedDate && (
                 <>
-                    <h2 className="calendar__subtitle">Sélectionnez un créneau horaire</h2>
+                    <h2 className="calendar__description">Sélectionnez un créneau horaire</h2>
                     <select
                         value={selectedTimeSlot}
                         onChange={handleTimeSlotChange}
