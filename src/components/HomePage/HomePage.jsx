@@ -3,6 +3,7 @@ import axios from 'axios';
 import HighlightBarHome from '../HighlightBarHome/HighlightBarHome';
 import Welcome from './Welcome/Welcome';
 import ContactSection from './ContactSection/ContactSection';
+import Loading from '../UI/Loading/Loading';
 
 const Home = () => {
 
@@ -25,7 +26,7 @@ const Home = () => {
 
     return (
         <>
-            {isLoading && (<p>Chargement...</p>)}
+            {isLoading && <Loading />}
             {!isLoading && <HighlightBarHome products={products} />}
             <Welcome />
             <ContactSection />

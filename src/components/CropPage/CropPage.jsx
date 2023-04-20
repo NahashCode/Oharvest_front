@@ -4,6 +4,7 @@ import CropTable from './CropTable/CropTable';
 import axios from 'axios';
 
 import './CropPage.scss';
+import Loading from '../UI/Loading/Loading';
 
 const CropPage = () => {
     const [isLoading, setIsLoading] = useState(true);
@@ -35,7 +36,7 @@ const CropPage = () => {
 
     return (
         <section>
-            {isLoading && <p>Chargement...</p>}
+            {isLoading && <Loading />}
             {!isLoading && 
             <>
                 <CropPlan data={plots}/>
