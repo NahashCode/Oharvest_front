@@ -4,16 +4,18 @@ import Header from './Header/Header';
 import NavBar from './NavBar/NavBar';
 import Main from './UI/Main/Main';
 import Footer from './Footer/Footer';
+import Who from './Who/Who';
 
 import './App.scss';
 
 function App() {
     return (
         <div className="app">
-            <Header />
+            <Who />
+            {/* <Header />
             <NavBar />
             <Main />
-            <Footer />
+            <Footer /> */}
         </div>
     );
 }
