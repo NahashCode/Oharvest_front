@@ -7,7 +7,7 @@ import './Modal.scss';
 
 const Modal = ({isModalOpen, closeModal, children}) => {
     return createPortal(
-        isModalOpen && <div className="overlay">
+        isModalOpen && <div className="overlay" onClick={closeModal}>
             <div className="modal">
                 {children}
                 <Button modifier={'close'} text={'fermer'} onClick={closeModal}/>
