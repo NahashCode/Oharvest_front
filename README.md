@@ -1,5 +1,5 @@
 ![oharvest](./src/assets/logo_oharvest_transparent.png)
-# Projet O'HARVEST (Front)
+# O'HARVEST PROJECT (Front)
 ---
 ## Project Creation 
 ---
