@@ -1,3 +1,4 @@
+import React from 'react';
 import PropTypes from 'prop-types';
 
 import './CropTable.scss';
@@ -14,18 +15,18 @@ const CropTable = ({data}) => {
                 </thead>
                 <tbody>
                     {data.map(row => (
-                    <tr key={row.plotId} className="crop-table__row">
-                        <td>
-                            {row.plotId}
-                        </td>
-                        <td>
-                            <ul>
-                                {row.product.map(item => {
-                                    return (<li key={item.id}>{item.name}</li>);
-                                })}
-                            </ul>
-                        </td>
-                    </tr>
+                        <tr key={row.id} className="crop-table__row">
+                            <td>
+                                {row.name}
+                            </td>
+                            <td>
+                                <ul>
+                                    {row.products.map(item => {
+                                        return (<li key={item.id}>{item.name}</li>);
+                                    })}
+                                </ul>
+                            </td>
+                        </tr>
                     ))}
                 </tbody>
             </table>
@@ -33,26 +34,26 @@ const CropTable = ({data}) => {
     );
 };
 
-
 CropTable.propTypes = {
     data: PropTypes.arrayOf(
         PropTypes.exact({
-            plotId: PropTypes.number.isRequired,
+            id: PropTypes.number.isRequired,
+            name: PropTypes.string.isRequired,
             coordinate: PropTypes.arrayOf(
                 PropTypes.arrayOf(
                     PropTypes.number.isRequired,
-                )
-            ),
-            product: PropTypes.arrayOf(
+                ).isRequired,
+            ).isRequired,
+            products: PropTypes.arrayOf(
                 PropTypes.exact({
                     id: PropTypes.number.isRequired,
                     name: PropTypes.string.isRequired,
                     isAvailable: PropTypes.bool.isRequired,
                     image: PropTypes.string.isRequired,
-                }),
+                }).isRequired,
             ),
-        }),
+        }).isRequired,
     ),
-}
+};
 
 export default CropTable;
