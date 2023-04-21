@@ -6,7 +6,7 @@ import logo from '../../../../assets/logo_oharvest_transparent.png';
 import './Map.scss';
 
 const Map = () => {
-    const position = [49.27005386352539, 3.9190235137939453];
+    const position = [48.752859, 7.414099];
 
     return (
         <MapContainer center={position} zoom={15} scrollWheelZoom={false} className="leaflet-map">
