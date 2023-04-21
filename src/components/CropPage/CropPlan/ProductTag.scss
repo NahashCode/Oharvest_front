@@ -1,0 +1,19 @@
+@use '../../../styles/vars';
+
+.product-tag {
+    display: flex;
+    align-items: center;
+    font-family: vars.$title-font;
+    border: 1px solid vars.$alternative-color;
+    background-color: vars.$secundary-color;
+    border-radius: 3px;
+    padding: .2rem;
+    margin: .1rem;
+
+    &__img {
+        height: 12px;
+        border-radius: 50%;
+        margin-right: .2rem;
+        border: 1px solid vars.$alternative-color;
+    }
+}
