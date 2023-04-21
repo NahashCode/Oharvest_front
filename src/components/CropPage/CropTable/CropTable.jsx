@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import ProductTag from '../ProductTag/ProductTag';
 
 import './CropTable.scss';
 
@@ -23,9 +24,9 @@ const CropTable = ({data}) => {
                                 {row.name}
                             </td>
                             <td>
-                                <ul>
-                                    {row.products.map(item => {
-                                        return (<li key={item.id}>{item.name}</li>);
+                                <ul className="crop-table__row-products">
+                                    {row.products.map(product => {
+                                        return (<ProductTag key={product.id} {...product} />);
                                     })}
                                 </ul>
                             </td>
