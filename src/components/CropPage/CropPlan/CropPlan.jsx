@@ -1,5 +1,6 @@
 import React from 'react';
-import { MapContainer, TileLayer, Rectangle, Tooltip } from 'react-leaflet';
+import { MapContainer, TileLayer } from 'react-leaflet';
+import Plot from './Plot';
 import PropTypes from 'prop-types';
 
 import './CropPlan.scss';
@@ -7,27 +8,16 @@ import './CropPlan.scss';
 const CropPlan = ({data}) => {
     const position = [49.27005386352539, 3.9190235137939453];
 
-    const options = { color: 'green'};
-
     return (
-        <MapContainer center={position} zoom={23} scrollWheelZoom={false} className="leaflet-map">
+        <MapContainer center={position} zoom={20} scrollWheelZoom={false} className="leaflet-map">
             <TileLayer
                 attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
                 url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
             />
-            {data.map(plot => (
-                <Rectangle key={plot.id} bounds={plot.coordinate} pathOptions={options}>
-                    <Tooltip direction="top" offset={[0, 20]} opacity={1} sticky>
-                        <ul>
-                            {plot.products.map(product => (<li key={product.id}>{product.name}</li>))}
-                        </ul>
-                    </Tooltip>
-                </Rectangle>
-            ))}
+            {data.map(plot => <Plot key={plot.id} plot={plot} />)}
         </MapContainer>
     );
 };
-
 
 CropPlan.propTypes = {
     data: PropTypes.arrayOf(

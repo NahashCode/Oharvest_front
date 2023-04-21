@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
+import axios from 'axios';
 import CropPlan from './CropPlan/CropPlan';
 import CropTable from './CropTable/CropTable';
-import axios from 'axios';
+import Loading from '../UI/Loading/Loading';
 
 import './CropPage.scss';
-import Loading from '../UI/Loading/Loading';
 
 const CropPage = () => {
     const [isLoading, setIsLoading] = useState(true);
@@ -30,8 +30,8 @@ const CropPage = () => {
             {isLoading && <Loading />}
             {!isLoading && 
             <>
-                <CropPlan data={plots}/>
-                <CropTable data={plots}/>
+                <CropPlan data={plots} />
+                <CropTable data={plots} />
             </>}
         </section>
     );

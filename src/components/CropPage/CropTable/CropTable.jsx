@@ -5,8 +5,11 @@ import './CropTable.scss';
 
 const CropTable = ({data}) => {
     return (
-        <div className="crop-table --default-style">
+        <div className="crop-table">
             <table>
+                <caption>
+                    Listes des produits disponibles par parcelle
+                </caption>
                 <thead>
                     <tr className="crop-table__header">
                         <th>numéro parcelle</th>
