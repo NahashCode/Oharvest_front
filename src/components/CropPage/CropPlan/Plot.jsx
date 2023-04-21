@@ -1,20 +1,23 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Rectangle, Tooltip } from 'react-leaflet';
-import ProductTag from './ProductTag';
+import { Rectangle, Tooltip, LayersControl } from 'react-leaflet';
+import ProductTag from '../ProductTag/ProductTag';
+
+import './CropPlan.scss';
 
 const Plot = ({plot}) => {
-
     const options = { color: 'hsl(208, 68%, 27%)'};
 
     return (
-        <Rectangle key={plot.id} bounds={plot.coordinate} pathOptions={options}>
-            <Tooltip direction="top" offset={[0, 20]} opacity={1} sticky>
-                <ul>
-                    {plot.products.map(product => (<ProductTag key={product.id} {...product} />))}
-                </ul>
-            </Tooltip>
-        </Rectangle>
+        <LayersControl.Overlay name={plot.name}>
+            <Rectangle className="plot" key={plot.id} bounds={plot.coordinate} pathOptions={options}>
+                <Tooltip direction="top" offset={[0, 20]} opacity={1} sticky>
+                    <ul>
+                        {plot.products.map(product => (<ProductTag key={product.id} {...product} />))}
+                    </ul>
+                </Tooltip>
+            </Rectangle>
+        </LayersControl.Overlay>
     ); 
 };
 
