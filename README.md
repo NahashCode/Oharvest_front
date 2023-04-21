@@ -73,7 +73,7 @@ Pour les commits, la convention est de commencer pour les:
 - `fix:` pour résoudre un bug
 - `refacto:` pour le refactoring
 - `merge:` pour les merges et résolution de conflit
-- `prod:` pour les mises en production (merge sur main)
+- `prod:` pour les mises en production (merge de dev dans main)
 - `hotfix:` pour résoudre un bug sur main
 
 Puis d'expliquer en quelques mots le travail réalisé (mentionner les composants/fichiers sur lesquel vous avez travailler)
