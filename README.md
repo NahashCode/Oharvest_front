@@ -67,12 +67,14 @@ Pour les noms des branches:
 
 Pour les commits, la convention est de commencer pour les:
 - `config:` pour tous ce qui concerne des fichiers de configuration
-- `feat:` pour l'ajout de fonctionnalités
-- `fix:` pour résoudre un bug
 - `doc:` pour tous ce qui concerne de la documentation
-- `refacto:` pour le refactoring
+- `feat:` pour l'ajout de fonctionnalités
 - `style:` pour tous ce qui concerne le style
+- `fix:` pour résoudre un bug
+- `refacto:` pour le refactoring
 - `merge:` pour les merges et résolution de conflit
+- `prod:` pour les mises en production (merge sur main)
+- `hotfix:` pour résoudre un bug sur main
 
 Puis d'expliquer en quelques mots le travail réalisé (mentionner les composants/fichiers sur lesquel vous avez travailler)
 
