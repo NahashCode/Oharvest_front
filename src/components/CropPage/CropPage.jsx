@@ -26,11 +26,10 @@ const CropPage = () => {
                     response.data.forEach((plot, index) => {
                         plot.coordinate = coordinates[index];
                     });
-                    console.log(response.data);
                     setPlots(response.data);
+                    setIsLoading(false);
                 })
                 .catch((err) => console.log(err));
-            setIsLoading(false);
         }, 3000);
     }, []);
 

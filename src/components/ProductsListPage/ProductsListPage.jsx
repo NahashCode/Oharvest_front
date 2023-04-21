@@ -30,11 +30,11 @@ const ProductsListPage = () => {
     }, []);
 
     return (
-        <div>
+        <>
             {isLoading && <Loading />}
             {!isLoading && <Message />}
             {!isLoading && categories.map(category => (<HighlightBar key={category.id} category={category} products={products} />))}
-        </div>
+        </>
     );
 };
 
