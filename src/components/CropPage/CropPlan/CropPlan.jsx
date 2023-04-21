@@ -1,12 +1,23 @@
-import React from 'react';
-import { MapContainer, TileLayer } from 'react-leaflet';
+import React, { useEffect } from 'react';
+import { MapContainer, TileLayer, LayersControl } from 'react-leaflet';
 import Plot from './Plot';
 import PropTypes from 'prop-types';
 
 import './CropPlan.scss';
+import UserMarker from './UserMarker';
 
 const CropPlan = ({data}) => {
-    const position = [49.27005386352539, 3.9190235137939453];
+    const position = [48.5771821, 7.7488522];
+
+    useEffect(() => {
+        getUserLocation();
+    }, []);
+
+    function getUserLocation(){
+        navigator.geolocation.getCurrentPosition((position) => {
+            console.log(position.coords.latitude, position.coords.longitude);
+        });
+    }
 
     return (
         <MapContainer center={position} zoom={20} scrollWheelZoom={false} className="leaflet-map">
@@ -14,7 +25,10 @@ const CropPlan = ({data}) => {
                 attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
                 url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
             />
-            {data.map(plot => <Plot key={plot.id} plot={plot} />)}
+            <LayersControl position="topright">
+                {data.map(plot => <Plot key={plot.id} plot={plot} />)}
+                <UserMarker />
+            </LayersControl>
         </MapContainer>
     );
 };
