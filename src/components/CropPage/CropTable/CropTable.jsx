@@ -6,21 +6,21 @@ import './CropTable.scss';
 
 const CropTable = ({data}) => {
     return (
-        <div className="crop-table">
+        <section className="crop-table">
             <table>
-                <caption>
+                <caption className="crop-table__title">
                     Listes des produits disponibles par parcelle
                 </caption>
                 <thead>
                     <tr className="crop-table__header">
-                        <th>numéro parcelle</th>
+                        <th style={{textAlign: 'right'}}>numéro parcelle</th>
                         <th>produits disponibles</th>
                     </tr>
                 </thead>
                 <tbody>
                     {data.map(row => (
                         <tr key={row.id} className="crop-table__row">
-                            <td>
+                            <td className="crop-table__row-sector">
                                 {row.name}
                             </td>
                             <td>
@@ -34,7 +34,7 @@ const CropTable = ({data}) => {
                     ))}
                 </tbody>
             </table>
-        </div>
+        </section>
     );
 };
 

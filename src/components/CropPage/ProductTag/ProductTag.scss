@@ -21,4 +21,8 @@
         margin-right: .4rem;
         border: 1px solid vars.$alternative-color;
     }
+
+    &:hover {
+        background-color: #3b8c6e;
+    }
 }
