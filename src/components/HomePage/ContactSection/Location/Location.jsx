@@ -12,7 +12,7 @@ const Location = () => {
         <Map position={shop} zoom={13} scrollWheelZoom={false}>
             <Marker position={shop}>
                 <Popup>
-                    <img className="popup__logo" src={logo} />
+                    <img className="popup__logo" src={logo} alt="logo O'Harvest" />
                 </Popup>
             </Marker>
         </Map>
