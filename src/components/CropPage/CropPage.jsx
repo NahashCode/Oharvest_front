@@ -27,6 +27,7 @@ const CropPage = () => {
 
     return (
         <section>
+            <h2 className="crop-page__page-title">Plan de la Cueillette</h2>
             {isLoading && <Loading />}
             {!isLoading && 
             <>
