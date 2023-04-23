@@ -6,24 +6,27 @@ const Loading = () => {
     const [text, setText] = useState('chargement');
 
     useEffect(() => {
-        setInterval(() => {
-            setText('chargement');
-        }, 4000);
         setTimeout(() => {
+            setText('chargement.');
             setInterval(() => {
                 setText('chargement.');
-            }, 4000);
-        }, 1000);
+            }, 2000);
+        }, 500);
         setTimeout(() => {
+            setText('chargement..');
             setInterval(() => {
                 setText('chargement..');
-            }, 4000);
-        }, 2000);
+            }, 2000);
+        }, 1000);
         setTimeout(() => {
+            setText('chargement...');
             setInterval(() => {
                 setText('chargement...');
-            }, 4000);
-        }, 3000);
+            }, 2000);
+        }, 1500);
+        setInterval(() => {
+            setText('chargement');
+        }, 2000);
     }, []);
 
     return (
