@@ -7,7 +7,7 @@
 /* Mobile responsive (320px-425px) */
 @media only screen and (max-width: 425px) {
     .tips {
-        margin: 1rem 3rem;
+        margin: 1rem 20vw;
     }
 
     .tips__button {
@@ -28,7 +28,7 @@
 /* Tablet responsive (425px-1024px) */
 @media only screen and (min-width: 425px) {
     .tips {
-        margin: 1rem 7rem;
+        margin: 1rem 20vw;
     }
 
     .tips__button {
@@ -50,7 +50,7 @@
 /* Desktop responsive (1024px-1440px) */
 @media only screen and (min-width: 1024px) {
     .tips {
-        margin: 2rem 20rem;
+        margin: 2rem 35vw;
     }
 
     .tips__button {
