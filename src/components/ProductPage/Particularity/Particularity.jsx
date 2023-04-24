@@ -10,7 +10,6 @@ const Particularity = ({description}) => {
         <div className='particularity'>
             <h2 className='particularity__title' >Particularités et description</h2>
             <p className='particularity__description' >{description}</p>
-            <h2 className='variety__title' >Nos variétés</h2>
         </div>
     );
 };
