@@ -1,0 +1,9 @@
+@use '../../../styles/vars';
+
+.error {
+  font-weight: vars.$title-font;
+  font-size: 2rem;
+  text-align: center;
+  padding: 2rem;
+  text-align: center;
+}
