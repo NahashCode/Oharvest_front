@@ -68,14 +68,18 @@ git checkout -b feat/feature-name>
 
  ---
 ## Commits name:
-
 - `config:` When configuration is changed
 - `feat:` When adding new feature or new styles
 - `fix:` When bug is resolved
 - `doc:` When documentation is update
 - `refacto:` When refactoring
+- `style:` pour tous ce qui concerne le style
+- `merge:` pour les merges et résolution de conflit
+- `prod:` pour les mises en production (merge de dev dans main)
+- `hotfix:` pour résoudre un bug sur main
 
 Then explain in a few words the work done (mention the components/files on which you worked).
+ ---
 
 Once the development is finished and committed, we recover any modifications:
 
