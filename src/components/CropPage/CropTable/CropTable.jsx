@@ -34,7 +34,7 @@ const CropTable = ({data}) => {
                     ))}
                 </tbody>
             </table>)}
-            {(data.length === 0) && <p className="crop-table__empty-notif">Aucun produit n'est disponible à la cueillette 😢</p>}
+            {(data.length === 0) && <p className="crop-table__empty-notif">Aucun produit disponible à la cueillette 😢</p>}
         </section>
     );
 };
