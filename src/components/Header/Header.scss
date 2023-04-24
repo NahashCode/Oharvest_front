@@ -8,9 +8,11 @@
   border-top: 1px solid black;
   text-align: center;
   overflow: hidden;
-  height: 1rem;
+  height: .7rem;
+  font-size: .7rem;
   background: linear-gradient(vars.$alternative-color, black);
   box-shadow: 0 0 1rem black;
+  text-shadow: 0 0 .3rem black;
 }
 
 .header {
