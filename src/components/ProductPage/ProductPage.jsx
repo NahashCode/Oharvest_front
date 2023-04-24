@@ -3,6 +3,7 @@ import axios from 'axios';
 import { useParams } from 'react-router-dom';
 import Banner from './Banner/Banner';
 import CalendarHarvest from './CalendarHarvest/CalendarHarvest';
+import RecipeProduct from './RecipeProduct/RecipeProduct';
 import Particularity from './Particularity/Particularity';
 import Variety from './Variety/Variety';
 import Tips from './Tips/Tips';
@@ -28,7 +29,6 @@ const ProductPage = () => {
                         'accept': 'application/json',
                     },
                 });
-                console.log(response.data);
                 setProduct(response.data);
                 setisLoading(false);
             } catch (error) {
@@ -37,7 +37,6 @@ const ProductPage = () => {
         };
         fetchData();
     }, [id]);
-
     
     return (
         <>
@@ -47,7 +46,12 @@ const ProductPage = () => {
                 <h2 className="crop-page__page-title">Fiche Produit</h2>
                 <Banner name={product.name} image={product.image} />
                 <CalendarHarvest startingDate={product.harvestBeginAt} endingDate={product.harvestEndAt} />
-                <Particularity description={product.description} />
+                {product.category && product.category.name !== 'Fleurs' && (
+                    <RecipeProduct
+                        name={product.name}
+                    />
+                )}
+                <Particularity description={product.description}/>
                 {(product.variety.length > 0) && product.variety.map(item => <Variety key={item.id} nameVariety={item.name} descVariety={item.description} />)}
                 <Tips tip={product.tip}/>
             </>)}
