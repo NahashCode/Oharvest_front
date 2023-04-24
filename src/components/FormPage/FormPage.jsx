@@ -1,11 +1,9 @@
 import React from 'react';
-// import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import './FormPage.scss';
 
 const FormPage = () => {
 
-    // const [infos, setInfos] = useState([]);
     const {register, handleSubmit} = useForm();
 
     const onSubmit = data => {
