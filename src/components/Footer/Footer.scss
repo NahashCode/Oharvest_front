@@ -37,6 +37,7 @@
                 font-family: Lexend, sans-serif;
                 color: vars.$background-light-color;
                 font-size: .9rem;
+                transition: .3s;
 
                 &:hover {
                     color: coral;
