@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import HighlightBarHome from '../HighlightBarHome/HighlightBarHome';
+import Carousel from '../UI/Carousel/Carousel.jsx';
 import Welcome from './Welcome/Welcome';
 import ContactSection from './ContactSection/ContactSection';
+import Loading from '../UI/Loading/Loading';
+import Message from '../Message/Message';
 
 const Home = () => {
 
@@ -12,20 +14,22 @@ const Home = () => {
     let url = 'http://kevin-hesse-server.eddi.cloud/api';
 
     useEffect(() => {
-        axios
-            .get(url + '/products/available')
-            .then((response) => {
-                console.log(response.data);
-                setProducts(response.data);
-                setIsLoading(false);
-            })
-            .catch((err) => console.log(err));
+        setTimeout(() => {
+            axios
+                .get(url + '/products/available')
+                .then((response) => {
+                    setProducts(response.data);
+                    setIsLoading(false);
+                })
+                .catch((err) => console.log(err));
+        }, 3000);
     }, []);
 
     return (
         <>
-            {isLoading && (<p>Chargement...</p>)}
-            {!isLoading && <HighlightBarHome products={products} />}
+            <Message />
+            {isLoading && <Loading />}
+            {!isLoading && <Carousel products={products} title="Produits disponibles" />}
             <Welcome />
             <ContactSection />
         </>

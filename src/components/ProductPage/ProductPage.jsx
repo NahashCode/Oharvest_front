@@ -6,15 +6,16 @@ import CalendarHarvest from './CalendarHarvest/CalendarHarvest';
 import Particularity from './Particularity/Particularity';
 import Variety from './Variety/Variety';
 import Tips from './Tips/Tips';
+import Loading from '../UI/Loading/Loading';
 
 import './ProductPage.scss';
+import Message from '../Message/Message.jsx';
 
 /* 
 |* Container component for the Product page(Banner/CalendarHArvest/Particularity/Variety/Tips)
 */
 const ProductPage = () => {
     const [product, setProduct] = useState({});
-    const [varieties, setVarieties] = useState({});
     const [isLoading, setisLoading] = useState(true);
     const { id } = useParams();
     const url = 'http://kevin-hesse-server.eddi.cloud/api';
@@ -27,26 +28,8 @@ const ProductPage = () => {
                         'accept': 'application/json',
                     },
                 });
-                setProduct(response.data);
-                setisLoading(false);
-            } catch (error) {
-                console.error('Erreur lors de la récupération des données:', error);
-            }
-        };
-        fetchData();
-    }, [id]);
-
-
-    useEffect(() => {
-        const fetchData = async () => {
-            try {
-                const response = await axios.get(url + `/varieties/${id}`, {
-                    headers: {
-                        'accept': 'application/json',
-                    },
-                }); 
                 console.log(response.data);
-                setVarieties(response.data);
+                setProduct(response.data);
                 setisLoading(false);
             } catch (error) {
                 console.error('Erreur lors de la récupération des données:', error);
@@ -58,13 +41,15 @@ const ProductPage = () => {
     
     return (
         <>
-            {isLoading && (<p>Chargement...</p>) }
+            {isLoading && <Loading /> }
             {!isLoading && (<>
+                <Message />
+                <h2 className="crop-page__page-title">Fiche Produit</h2>
                 <Banner name={product.name} image={product.image} />
                 <CalendarHarvest startingDate={product.harvestBeginAt} endingDate={product.harvestEndAt} />
-                <Particularity feature={product.feature} />
-                <Variety name={varieties.name} />
-                <Tips trick={product.trick}/>
+                <Particularity description={product.description} />
+                {(product.variety.length > 0) && product.variety.map(item => <Variety key={item.id} nameVariety={item.name} descVariety={item.description} />)}
+                <Tips tip={product.tip}/>
             </>)}
         </>
     );
