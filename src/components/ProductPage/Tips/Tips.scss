@@ -77,18 +77,18 @@
     flex-direction: column;
     border-radius: 10px;
     background: vars.$background-light-color;
-    padding: 1rem;
+    padding: 0.4rem;
     box-shadow:
-    inset hsl(203, 71%, 15%) 0 0 5px 5px, 
-    inset hsl(208, 68%, 27%) 0 0 5px 10px, 
-    inset hsl(158, 41%, 39%) 0 0 5px 16px, 
-    inset hsl(135, 51%, 69%) 0 0 5px 17px, 
-    inset hsl(135, 51%, 69%) 0 0 5px 21px, 
-    inset hsl(135, 51%, 69%) 0 0 5px 22px;
+    inset hsl(203, 71%, 15%) 0 0 5px 2px,
+    inset hsl(208, 68%, 27%) 0 0 5px 5px,
+    inset hsl(158, 41%, 39%) 0 0 5px 8px,
+    inset hsl(135, 51%, 69%) 0 0 5px 9px,
+    inset hsl(135, 51%, 69%) 0 0 5px 10px,
+    inset hsl(135, 51%, 69%) 0 0 5px 11px;
 }
 
 .tips__button {
-    background: radial-gradient(vars.$alternative-color, vars.$primary-color);;
+    background: radial-gradient(vars.$alternative-color, vars.$primary-color);
     border: none;
     border-radius: 10px;
     color: white;
