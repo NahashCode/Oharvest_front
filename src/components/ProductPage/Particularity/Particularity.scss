@@ -7,12 +7,12 @@
 /* Mobile responsive (320px-425px) */
 @media only screen and (max-width: 425px) {
     .particularity__title {
-        font-size: 1rem;
+        font-size: 1.3rem;
         padding: 1rem;
     }
 
     .particularity__description {
-        margin: 1rem;
+        margin: 0.7rem;
         font-size: 0.8rem;
     }
     .variety__title {
@@ -40,7 +40,7 @@
 /* Desktop responsive (1024px-1440px) */
 @media only screen and (min-width: 1024px) {
     .particularity__title {
-        font-size: 2rem;
+        font-size: 2.2rem;
         padding: 2rem;
     }
     .particularity__description {
@@ -63,13 +63,12 @@
     width: 100%;
 }
 
-.particularity__title {
-        text-align: center;
-        border-bottom: 10px solid vars.$alternative-color;
-        margin-bottom: 1rem;
-        padding-bottom: 1.2rem;
-        border-radius: 50%;
-        color: vars.$primary-color;
+.particularity__title {  
+    text-align: center;
+    border-bottom: 10px solid vars.$alternative-color;
+    margin-bottom: 1rem;
+    padding-bottom: 1.2rem;
+    border-radius: 50%;
 }
 
 .particularity__description {
