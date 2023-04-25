@@ -28,7 +28,7 @@ const Carousel = ({products, category, title, nbCardsToSHow = 4}) => {
             {
                 breakpoint: 425,
                 settings: {
-                    slidesToShow: 4,
+                    slidesToShow: nbCardsToSHow,
                     slidesToScroll: 3,
                     initialSlide: 2,
                 },
@@ -36,7 +36,7 @@ const Carousel = ({products, category, title, nbCardsToSHow = 4}) => {
             {
                 breakpoint: 320,
                 settings: {
-                    slidesToShow: 3,
+                    slidesToShow: nbCardsToSHow,
                     slidesToScroll: 2,
                 },
             },

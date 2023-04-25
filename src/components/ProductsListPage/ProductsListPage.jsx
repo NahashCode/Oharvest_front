@@ -53,9 +53,9 @@ const ProductsListPage = () => {
         <>
             <Message />
             <h2 className="products-list__page-title">Inventaire des produits</h2>
-            <button className="products-list-page__button" onClick={filterProducts}>
+            {(!isLoading && !error) && <button className="products-list-page__button" onClick={filterProducts}>
                 se limiter aux produits de saison
-            </button>
+            </button>}
             {isLoading && <Loading />}
             {error && <Error />}
             {(!isLoading && !error) && categories.map(category => (<Carousel key={category.id} category={category} products={products} nbCardsToSHow={nbProductsPerCarousel}/>))}
