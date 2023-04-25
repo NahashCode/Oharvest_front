@@ -7,12 +7,12 @@ import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import './Carousel.scss';
 
-const Carousel = ({products, category, title}) => {
+const Carousel = ({products, category, title, nbCardsToSHow = 4}) => {
     const settings = {
         dots: true,
         infinite: true,
         speed: 500,
-        slidesToShow: 4,
+        slidesToShow: nbCardsToSHow,
         slidesToScroll: 3,
         initialSlide: 0,
         responsive: [
@@ -101,6 +101,7 @@ Carousel.propTypes = {
         name: PropTypes.string.isRequired,
     }),
     title: PropTypes.string,
+    nbCardsToSHow: PropTypes.number,
 };
 
 export default Carousel;
