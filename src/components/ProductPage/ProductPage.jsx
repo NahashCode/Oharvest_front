@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useParams } from 'react-router-dom';
 import Banner from './Banner/Banner';
+import Availablity from './Availablity/Availablity';
 import CalendarHarvest from './CalendarHarvest/CalendarHarvest';
 import RecipeProduct from './RecipeProduct/RecipeProduct';
 import Particularity from './Particularity/Particularity';
@@ -45,6 +46,7 @@ const ProductPage = () => {
                 <Message />
                 <h2 className="crop-page__page-title">Fiche Produit</h2>
                 <Banner name={product.name} image={product.image} />
+                <Availablity tag={product.isAvailable}/>
                 <CalendarHarvest startingDate={product.harvestBeginAt} endingDate={product.harvestEndAt} />
                 {product.category && product.category.name !== 'Fleurs' && (
                     <RecipeProduct
