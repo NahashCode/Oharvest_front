@@ -30,6 +30,7 @@ const ProductPage = () => {
                         'accept': 'application/json',
                     },
                 });
+                console.log(response.data.category.name);
                 setProduct(response.data);
                 setisLoading(false);
             } catch (error) {
@@ -48,7 +49,7 @@ const ProductPage = () => {
                 <Banner name={product.name} image={product.image} />
                 <Availablity tag={product.isAvailable}/>
                 <CalendarHarvest startingDate={product.harvestBeginAt} endingDate={product.harvestEndAt} />
-                {product.category && product.category.name !== 'Fleurs' && (
+                {(product.category && product.category.name !== 'Fleur') && (
                     <RecipeProduct
                         name={product.name}
                     />
