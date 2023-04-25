@@ -6,6 +6,8 @@ import Message from '../Message/Message';
 import Loading from '../UI/Loading/Loading';
 import Error from '../UI/Error/Error';
 
+import './ProductsListPage.scss';
+
 const ProductsListPage = () => {
     const [products, setProducts] = useState([]);
     const [categories, setCategories] = useState([]);
@@ -42,7 +44,7 @@ const ProductsListPage = () => {
     return (
         <>
             <Message />
-            <h2 className="crop-page__page-title">Inventaire des produits</h2>
+            <h2 className="products-list__page-title">Inventaire des produits</h2>
             {isLoading && <Loading />}
             {error && <Error />}
             {(!isLoading && !error) && categories.map(category => (<Carousel key={category.id} category={category} products={products} />))}
