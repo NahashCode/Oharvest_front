@@ -5,11 +5,29 @@
 /* Responsive CSS */
 /* ------------------------------------------------------ */
 
+.highlight__tag--available {
+  border-radius: 5px;
+  padding: .2rem;
+  font-size: .5rem;
+  background-color: lightgreen;
+  border: 1px solid darkgreen;
+  color: darkgreen;
+}
+
+.highlight__tag--unavailable {
+  border-radius: 5px;
+  padding: .2rem;
+  font-size: .5rem;
+  background-color: lightcoral;
+  border: 1px solid darkred;
+  color: darkred;
+}
+
 @media screen and (max-width: 425px) {
 
   .highlight {
     height: 12vh;
-    margin-bottom: 0.7rem;
+    margin: 1.7rem 0;
   }
 
   .highlight__title {
@@ -56,5 +74,11 @@
 
   .highlight__card {
     height: 12vh;
+  }
+
+  .highlight__tag--available,
+  .highlight__tag--unavailable  {
+    padding: .1rem;
+    font-size: .7rem;
   }
 }
