@@ -57,7 +57,9 @@
     text-align: center;
     color: white;
     margin-top: 1rem;
-    background-color: vars.$alternative-color;  
+    /* background-color: vars.$alternative-color; */  
+    background: radial-gradient(vars.$secundary-color, vars.$primary-color);
+
     border-radius: 10px;
     text-transform: capitalize;
 }
