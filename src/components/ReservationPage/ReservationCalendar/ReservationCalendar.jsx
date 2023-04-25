@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { NavLink, Link } from 'react-router-dom';
 import DatePicker from 'react-datepicker';
 import { format } from 'date-fns';
 import { registerLocale } from 'react-datepicker';
@@ -110,9 +111,11 @@ Utility function
                         </option>
                     </select>
                     {selectedTimeSlot && (
-                        <button className="calendar__button" onClick={handleReserve}>
-                        Réserver la date et le créneau sélectionnés
-                        </button>
+                        <Link to="/reservation/inscription">
+                            <button className="calendar__button" onClick={handleReserve}>
+                            Réserver la date et le créneau sélectionnés
+                            </button>
+                        </Link>
                     )}
                 </>
             )}
