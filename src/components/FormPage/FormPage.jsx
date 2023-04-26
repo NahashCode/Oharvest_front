@@ -23,7 +23,6 @@ const FormPage = () => {
                     <h3 className="formpage__resa">Heure et jour de votre reservation</h3>
                     <p>Date :</p>
                     <p>Heure :</p>
-                    <p>Thème :</p>
                 </div>
 
                 <div className="formpage__input-group">
@@ -144,7 +143,7 @@ const FormPage = () => {
                         inputMode="decimal"
                         {...register('student', {
                             pattern: {
-                                value: /^[0-9]+$/,
+                                value: /^([1-9]|[1-4]\d|50)$/,
                                 message: 'Format non valide',
                             },
                             maxLength: {
