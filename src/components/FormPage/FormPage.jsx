@@ -1,8 +1,16 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
 import './FormPage.scss';
+import { useSearchParams } from 'react-router-dom';
+import axios from 'axios';
 
 const FormPage = () => {
+    const [searchParams] = useSearchParams();
+    const timeslot = searchParams.get('slot');
+    const date = new Date(searchParams.get('date'));
+    const visitAt = `${date.getFullYear()}-${date.getMonth()+1}-${date.getUTCDate()}`;
+    const url = 'http://kevin-hesse-server.eddi.cloud/api';
+
     const {
         register,
         handleSubmit,
@@ -10,7 +18,26 @@ const FormPage = () => {
     } = useForm();
 
     const onSubmit = (data) => {
-        console.log(data);
+        console.log({
+            ...data,
+            studentNumber: Number(data.studentNumber),
+            guideNumber: Number(data.guideNumber),
+            groupNumber: Number(data.groupNumber),
+            slot: timeslot,
+            visitAt,
+        });
+
+        axios.post(`${url}/bookings`, {
+            ...data,
+            slot: timeslot,
+            visitAt,
+        })
+            .then(function (response) {
+                console.log(response.data);
+            })
+            .catch(function (error) {
+                console.log(error);
+            });
     };
 
     return (
@@ -21,8 +48,8 @@ const FormPage = () => {
             <form action="" className="formpage" onSubmit={handleSubmit(onSubmit)}>
                 <div className="formpage__resa-div">
                     <h3 className="formpage__resa">Heure et jour de votre reservation</h3>
-                    <p>Date :</p>
-                    <p>Heure :</p>
+                    <p>Date : {}</p>
+                    <p>Créneau : {timeslot}</p>
                 </div>
 
                 <div className="formpage__input-group">
@@ -44,9 +71,9 @@ const FormPage = () => {
                     <label htmlFor="adress">Adresse postale</label>
                     <input
                         type="text"
-                        name="adress"
-                        id="adress"
-                        {...register('adress', {
+                        name="address"
+                        id="address"
+                        {...register('address', {
                             pattern: {
                                 value: /^[A-Za-z 0-9]+$/i,
                                 message: 'Format non valide',
@@ -59,9 +86,9 @@ const FormPage = () => {
                     <label htmlFor="code">Code postal</label>
                     <input
                         type="number"
-                        name="code"
-                        id="code"
-                        {...register('code', {
+                        name="zipcode"
+                        id="zipcode"
+                        {...register('zipcode', {
                             pattern: {
                                 value: /^[0-9]+$/,
                                 message: 'Format non valide',
@@ -108,9 +135,9 @@ const FormPage = () => {
                     <label htmlFor="mail">Adresse Email responsable visite</label>
                     <input
                         type="email"
-                        name="email"
-                        id="email"
-                        {...register('email', {
+                        name="mail"
+                        id="mail"
+                        {...register('mail', {
                             pattern: {
                                 value: /\S+@\S+\.\S+/,
                                 message: 'Format d\'email non valide'
@@ -120,12 +147,12 @@ const FormPage = () => {
                     {errors.email && <span>{errors.email.message}</span>}
                 </div>
                 <div className="formpage__input-group">
-                    <label htmlFor="teacher">Nom de l'enseignant/e </label>
+                    <label htmlFor="contact">Nom de l'enseignant/e </label>
                     <input
                         type="text"
-                        name="teacher"
-                        id="teacher"
-                        {...register('teacher', {
+                        name="contact"
+                        id="contact"
+                        {...register('contact', {
                             pattern: {
                                 value: /^[A-Za-z]+$/i,
                                 message: 'Format non valide',
@@ -135,13 +162,13 @@ const FormPage = () => {
                     {errors.teacher && <span>{errors.teacher.message}</span>}
                 </div>
                 <div className="formpage__input-group">
-                    <label htmlFor="student">Nombre d'élèves</label>
+                    <label htmlFor="studentNumber">Nombre d'élèves</label>
                     <input
                         type="number"
-                        name="student"
-                        id="student"
+                        name="studentNumber"
+                        id="studentNumber"
                         inputMode="decimal"
-                        {...register('student', {
+                        {...register('studentNumber', {
                             pattern: {
                                 value: /^([1-9]|[1-4]\d|50)$/,
                                 message: 'Format non valide',
@@ -155,13 +182,13 @@ const FormPage = () => {
                     {errors.student && <span>{errors.student.message}</span>}
                 </div>
                 <div className="formpage__input-group">
-                    <label htmlFor="guide">Nombre d'accompagnateurs</label>
+                    <label htmlFor="guideNumber">Nombre d'accompagnateurs</label>
                     <input
                         type="text"
-                        name="guide"
-                        id="guide"
+                        name="guideNumber"
+                        id="guideNumber"
                         inputMode="decimal"
-                        {...register('guide', {
+                        {...register('guideNumber', {
                             pattern: {
                                 value: /^[0-9]+$/,
                                 message: 'Format non valide',
@@ -178,10 +205,10 @@ const FormPage = () => {
                     <label htmlFor="group">Nombre de groupes</label>
                     <input
                         type="number"
-                        name="group"
-                        id="group"
+                        name="groupNumber"
+                        id="groupNumber"
                         inputMode="decimal"
-                        {...register('group', {
+                        {...register('groupNumber', {
                             pattern: {
                                 value: /^[0-9]+$/,
                                 message: 'Format non valide',
@@ -211,23 +238,6 @@ const FormPage = () => {
                         })}
                     ></textarea>
                     {errors.transport && <span>{errors.transport.message}</span>}
-                </div>
-                <div className="formpage__textarea">
-                    <label htmlFor="remarque">Remarques</label>
-                    <textarea
-                        name="remarque"
-                        placeholder="Pour toute information complémentaire"
-                        id="remarque"
-                        cols="30"
-                        rows="10"
-                        {...register('remarque', {
-                            pattern: {
-                                value: /^[A-Za-z- 0-9]+$/i,
-                                message: 'Erreur dans la saisie',
-                            }
-                        })}
-                    ></textarea>
-                    {errors.remarque && <span>{errors.remarque.message}</span>}
                 </div>
                 <button className="formpage__btn">Réserver</button>
             </form>

@@ -32,11 +32,11 @@ Event function
             console.log(
                 `Date et créneau réservés: ${format(
                     selectedDate,
-                    'dd-MM-yyyy'
+                    'yyyy-MM-dd'
                 )} - ${selectedTimeSlot}`
             );
 
-            const dateString = format(selectedDate, 'dd-MM-yyyy');
+            const dateString = format(selectedDate, 'yyyy-MM-dd');
             const updatedReservedSlots = {
                 ...reservedSlots,
                 [dateString]: reservedSlots[dateString]
@@ -55,7 +55,7 @@ Event function
 Utility function
 --------------------------------------- */
     const isDateReserved = (date) => { // Check if a day is totally booked (morning & afternoon)
-        const dateString = format(date, 'dd-MM-yyyy');
+        const dateString = format(date, 'yyyy-MM-dd');
         return (
             reservedSlots[dateString] &&
         reservedSlots[dateString].includes('morning') &&
@@ -69,7 +69,7 @@ Utility function
     };
 
     const isTimeSlotReserved = (date, timeSlot) => { // Check if a time slot is booked
-        const dateString = format(date, 'dd-MM-yyyy');
+        const dateString = format(date, 'yyyy-MM-dd');
         return (
             reservedSlots[dateString] && reservedSlots[dateString].includes(timeSlot)
         );
@@ -114,7 +114,7 @@ Utility function
                             </option>
                         </select>
                         {selectedTimeSlot && (
-                            <Link to="/reservation/inscription">
+                            <Link to={`/reservation/inscription?date=${selectedDate}&&slot=${selectedTimeSlot}`}>
                                 <button className="calendar__button" onClick={handleReserve}>
                                     Réserver la date et le créneau sélectionnés
                                 </button>
