@@ -61,6 +61,9 @@ Create a new branch to work on a new feature :
 ```
 git checkout -b feat/feature-name>
 ```
+Pour les noms des branches:
+❌ ~~CamelCase ou pascalCase~~
+✅ **snake_case**
 
 ### ! Name branch !
 ❌ ~~CamelCase ou pascalCase~~
@@ -86,6 +89,9 @@ Once the development is finished and committed, we recover any modifications:
 ```
 git pull origin feat/<name-feature>
 ```
+Pour les noms des branches:
+❌ ~~CamelCase ou pascalCase~~
+✅ **snake_case**
 
 We resolve conflicts.
 
