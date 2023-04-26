@@ -3,6 +3,7 @@ import { NavLink, Link } from 'react-router-dom';
 import DatePicker from 'react-datepicker';
 import { format } from 'date-fns';
 import { registerLocale } from 'react-datepicker';
+import { Link } from 'react-router-dom';
 import fr from 'date-fns/locale/fr';
 import 'react-datepicker/dist/react-datepicker.css';
 
@@ -80,26 +81,24 @@ Utility function
     return (
         <div className="calendar">
             <h1 className="calendar__title">Calendrier de réservations</h1>
-            <h2 className='calendar__description'>Choisissez la date de votre visite</h2>
-            <DatePicker
-                selected={selectedDate}
-                onChange={handleDateChange}
-                inline
-                locale="fr"
-                filterDate={isWeekday}
-            />
-            {selectedDate && (
-                <>
-                    <h2 className="calendar__description">Sélectionnez un créneau horaire</h2>
-                    <select
-                        value={selectedTimeSlot}
-                        onChange={handleTimeSlotChange}
-                        className="calendar__select"
-                    >
-                        <option value="">Choisissez un créneau horaire</option>
-                        <option
-                            value="morning"
-                            disabled={isTimeSlotReserved(selectedDate, 'morning')}
+            <div className='container__desktop'>
+                <div className='calendar__container'>
+                    <h2 className='calendar__description'>Choisissez la date de votre visite</h2>
+                    <DatePicker
+                        selected={selectedDate}
+                        onChange={handleDateChange}
+                        inline
+                        locale="fr"
+                        filterDate={isWeekday}
+                    />
+                </div>
+                {selectedDate && (
+                    <div className='container_reservation'>
+                        <h2 className="calendar__description">Sélectionnez un créneau horaire</h2>
+                        <select
+                            value={selectedTimeSlot}
+                            onChange={handleTimeSlotChange}
+                            className="calendar__select"
                         >
                     Matin
                         </option>
