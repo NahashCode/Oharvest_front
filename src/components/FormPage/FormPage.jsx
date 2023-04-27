@@ -1,15 +1,19 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import './FormPage.scss';
-import { useSearchParams } from 'react-router-dom';
+import { useSearchParams, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
 const FormPage = () => {
     const [searchParams] = useSearchParams();
+    const naviguate = useNavigate();
     const timeslot = searchParams.get('slot');
     const date = new Date(searchParams.get('date'));
     const visitAt = `${date.getFullYear()}-${date.getMonth()+1}-${date.getUTCDate()}`;
     const url = 'http://kevin-hesse-server.eddi.cloud/api';
+    const [inscriptionDone, setInscriptionDone] = useState(false);
+
+    
 
     const {
         register,
@@ -17,23 +21,22 @@ const FormPage = () => {
         formState: { errors },
     } = useForm();
 
-    const onSubmit = (data) => {
-        console.log({
+    const onSubmit = (data, event) => {
+        event.preventDefault();
+        axios.post(`${url}/bookings`, {
             ...data,
             studentNumber: Number(data.studentNumber),
             guideNumber: Number(data.guideNumber),
             groupNumber: Number(data.groupNumber),
             slot: timeslot,
             visitAt,
-        });
-
-        axios.post(`${url}/bookings`, {
-            ...data,
-            slot: timeslot,
-            visitAt,
         })
             .then(function (response) {
                 console.log(response.data);
+                setInscriptionDone(true);
+                setTimeout(() => {
+                    naviguate('/');
+                }, 5000);
             })
             .catch(function (error) {
                 console.log(error);
@@ -48,7 +51,7 @@ const FormPage = () => {
             <form action="" className="formpage" onSubmit={handleSubmit(onSubmit)}>
                 <div className="formpage__resa-div">
                     <h3 className="formpage__resa">Heure et jour de votre reservation</h3>
-                    <p>Date : {}</p>
+                    <p>Date : {searchParams.get('date')}</p>
                     <p>Créneau : {timeslot}</p>
                 </div>
 
@@ -239,6 +242,7 @@ const FormPage = () => {
                     ></textarea>
                     {errors.transport && <span>{errors.transport.message}</span>}
                 </div>
+                {inscriptionDone && <p style={{textAlign: 'center', border: '1px solid black', borderRadius: 10, padding: '1rem', marginTop: '1rem'}}>Votre inscription a bien été prise en compte. Vous allez être redirigé vers la page d'accueil</p>}
                 <button className="formpage__btn">Réserver</button>
             </form>
         </div>
