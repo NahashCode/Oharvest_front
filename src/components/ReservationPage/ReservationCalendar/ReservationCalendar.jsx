@@ -13,19 +13,50 @@ import './ReservationCalendar.scss';
 Hook
 --------------------------------------- */
 const ReservationCalendar = () => {
-    const [selectedDate, setSelectedDate] = useState(); //stock the date choosen by user
-    const [selectedTimeSlot, setSelectedTimeSlot] = useState(); //stock the time slot choosen by user
-    const [reservedSlots, setReservedSlots] = useState([]); //stock time slot already booked
-    const [excludeDays, setExcludeDays] = useState([]);
+    const [selectedDate, setSelectedDate] = useState(); // stock the date choosen by user
+    const [selectedTimeSlot, setSelectedTimeSlot] = useState(); // stock the time slot choosen by user
+    const [reservedSlots, setReservedSlots] = useState([]); // stock time slot already booked
+    const [excludeDays, setExcludeDays] = useState([]); // days to disable on the calendar
 
     useEffect(() => {
         const url = 'http://kevin-hesse-server.eddi.cloud/api';
         axios.get(url + '/bookings')
-            .then((response) => {
-                // const bookingDates = response.data.map((item) => ({ date: new Date(item.visitAt), timeSlot: item.slot }));
-                const bookingDates = response.data.map((item) => ({ dateString: item.visitAt, timeSlot: item.slot }));
-                const lists = reservedSlots.map(item => item.date);
+            .then((response) => {     
+                
+                /**
+                 * array used to push days to disable in the calendar
+                 */
+                const formatData = [];
+                // exemple : un array de 5 elements <== response.data.length = 5
+                // [0] = {visitAt: 23/06/2023, slot: afternoon}; <== we are here / index equal 0 / 1st iteration
+                // [1] = {visitAt: 24/06/2023, slot: afternoon}; <== we are here / index equal 1 / 2nd iteration
+                // [2] = {visitAt: 24/06/2023, slot: morning};  <== we are here / index equal 2 / 2nd iteration
+                // [3] = {visitAt: 26/06/2023, slot: afternoon};  <== we are here / index equal 3 / 3rd iteration
+                // [4] = {visitAt: 27/06/2023, slot: afternoon}; <== we are here / index equal 4 / 4th iteration
+                for(let index=0; index < response.data.length; index++){
+                    if(index !== response.data.length - 1 && response.data[index].visitAt === response.data[index+1].visitAt){
+                        delete response.data[index].slot;
+                        formatData.push(response.data[index]);
+                        index++;
+                    } else {
+                        formatData.push(response.data[index]);
+                    }
+                }
+
+                /**
+                 * formating attributes name
+                 */
+                const bookingDates = formatData.map((item) => ({ date: new Date(item.visitAt), timeSlot: item.slot }));
+            
                 setReservedSlots(bookingDates);
+                
+                /**
+                 * keep only the day where morning and afternoon are booked (the day is not available on the calendar)
+                 */
+                const lists = bookingDates
+                    .filter(item => item.timeSlot !== 'morning' && item.timeSlot !== 'afternoon')
+                    .map((item) => item.date);
+
                 setExcludeDays(lists);
             })
             .catch((error) => console.log(error));
@@ -39,7 +70,6 @@ Event function
      * on click on the day date, update the date choosen by the user
      */
     const handleDateChange = (date) => { // -> Event: click on a day date 
-        console.log('date selectionné', date);
         setSelectedDate(date); //-> Update state: date choosen by user
     };
 
@@ -47,39 +77,7 @@ Event function
      * on click event on the select timeslot, update the timeslot selected by user
      */
     const handleTimeSlotChange = (event) => { // -> Event: click on time slot 
-        console.log(event.target.value);
         setSelectedTimeSlot(event.target.value); //-> Update state: time slot choosen by user
-    };
-
-    /**
-     * on click event on the button reservation, 
-     */
-    const handleReserve = () => { // -> Event: click on button "reservation" 
-        if (selectedTimeSlot) { //-> Check if slot already booked & Update state: time slot already booked
-            // console.log(
-            //   `Date et créneau réservés: ${format(
-            //        selectedDate,
-            //        'yyyy-MM-dd'
-            //    )} - ${selectedTimeSlot}`
-            //);
-
-            console.log('selectedDate', selectedDate);
-            const dateString = format(selectedDate, 'yyyy-MM-dd');
-            const updatedReservedSlots = {
-                ...reservedSlots,
-                [dateString]: reservedSlots[dateString]
-                    ? [...reservedSlots[dateString], selectedTimeSlot]
-                    : [selectedTimeSlot],
-            };
-
-            console.log('datestring: ', dateString);
-            console.log('reservedSlots', reservedSlots);           
-            setReservedSlots(updatedReservedSlots);
-            setSelectedDate();
-            setSelectedTimeSlot();
-        } else {
-            console.log('Veuillez sélectionner un créneau horaire');
-        }
     };
 
     /* ---------------------------------
@@ -98,18 +96,28 @@ Utility function
         );
     };
 
-    const isWeekday = (date) => { // Check if a day is out of week-end & not totally booked (morning & afternoon)
+    /**
+     * Check if a day is out of week-end & not totally booked (morning & afternoon)
+     */
+    const isWeekday = (date) => {
         const day = date.getDay();
         return day !== 0 && day !== 6 && !isDateReserved(date);
     };
 
-    const isTimeSlotReserved = (date, timeSlot) => { // Check if a time slot is booked
-        const dateString = format(date, 'yyyy-MM-dd');
+    /**
+     * Check if a time slot is booked
+     */
+    const isTimeSlotReserved = (date, timeSlot) => {
+        const selectedDate = reservedSlots.find((reserved) => reserved.date.toDateString() === date.toDateString());
+
         return (
-            reservedSlots[dateString] && reservedSlots[dateString].includes(timeSlot)
+            selectedDate && selectedDate.timeSlot === timeSlot
         );
     };
-
+        
+    /**
+     * set the calendar presentation on french format
+     */
     registerLocale('fr', fr);
 
     return (
@@ -123,7 +131,8 @@ Utility function
                         onChange={handleDateChange}
                         inline
                         locale="fr"
-                        excludeDateIntervals={[{start: new Date(Date.now().getFullYear(), 0), end: Date.now()}]}
+                        excludeDates={excludeDays}
+                        excludeDateIntervals={[{start: new Date(2023), end: Date.now()}]}
                         filterDate={isWeekday}
                     />
                 </div>
@@ -150,11 +159,11 @@ Utility function
                             </option>
                         </select>
                         {selectedTimeSlot && (
-                            //<Link to={`/reservation/inscription?date=${selectedDate}&&slot=${selectedTimeSlot}`}>
-                                <button className="calendar__button" onClick={handleReserve}>
+                            <Link to={`/reservation/inscription?date=${selectedDate}&&slot=${selectedTimeSlot}`}>
+                                <button className="calendar__button">
                                     Réserver la date et le créneau sélectionnés
                                 </button>
-                            //</Link>
+                            </Link>
                         )}
                     </div>
                 )}
