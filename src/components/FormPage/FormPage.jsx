@@ -13,8 +13,6 @@ const FormPage = () => {
     const url = 'http://kevin-hesse-server.eddi.cloud/api';
     const [inscriptionDone, setInscriptionDone] = useState(false);
 
-    
-
     const {
         register,
         handleSubmit,
