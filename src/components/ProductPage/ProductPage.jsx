@@ -30,7 +30,6 @@ const ProductPage = () => {
                         'accept': 'application/json',
                     },
                 });
-                console.log(response.data.category.name);
                 setProduct(response.data);
                 setisLoading(false);
             } catch (error) {
@@ -50,9 +49,7 @@ const ProductPage = () => {
                 <Availablity tag={product.isAvailable}/>
                 <CalendarHarvest startingDate={product.harvestBeginAt} endingDate={product.harvestEndAt} />
                 {(product.category && product.category.name !== 'Fleur') && (
-                    <RecipeProduct
-                        name={product.name}
-                    />
+                    <RecipeProduct name={product.name}/>
                 )}
                 <Particularity description={product.description}/>
                 {(product.variety.length > 0) && product.variety.map(item => <Variety key={item.id} nameVariety={item.name} descVariety={item.description} />)}
