@@ -5,13 +5,14 @@ import { useSearchParams, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
 const FormPage = () => {
+    const [inscriptionDone, setInscriptionDone] = useState(false);
     const [searchParams] = useSearchParams();
     const naviguate = useNavigate();
+
     const timeslot = searchParams.get('slot');
     const date = new Date(searchParams.get('date'));
     const visitAt = `${date.getFullYear()}-${date.getMonth()+1}-${date.getUTCDate()}`;
     const url = 'http://kevin-hesse-server.eddi.cloud/api';
-    const [inscriptionDone, setInscriptionDone] = useState(false);
 
     const {
         register,
@@ -44,17 +45,17 @@ const FormPage = () => {
     return (
         <div>
             <h2 className="formpage__title">
-        Formulaire de réservation pour la visite
+                Formulaire de réservation pour la visite
             </h2>
             <form action="" className="formpage" onSubmit={handleSubmit(onSubmit)}>
                 <div className="formpage__resa-div">
                     <h3 className="formpage__resa">Heure et jour de votre reservation</h3>
-                    <p>Date : {searchParams.get('date')}</p>
-                    <p>Créneau : {timeslot}</p>
+                    <p>Date : {date.toLocaleDateString()}</p>
+                    <p>Créneau : {timeslot === 'morning' ? 'Matin' : 'Après-midi'}</p>
                 </div>
 
                 <div className="formpage__input-group">
-                    <label htmlFor="name">Nom de l'Etablissement</label>
+                    <label htmlFor="name">Nom de l&apos;Etablissement</label>
                     <input
                         type="text"
                         name="name"
@@ -91,7 +92,7 @@ const FormPage = () => {
                         id="zipcode"
                         {...register('zipcode', {
                             pattern: {
-                                value: /^[0-9]+$/,
+                                value: /^(0[1-9][0-9]{3}|[1-8][0-9]{4}|9[0-6][0-9]{3}|97[1-8][0-9]{2}|98[46-9][0-9]{2})$/,
                                 message: 'Format non valide',
                             },
                             maxLength: {
@@ -124,8 +125,8 @@ const FormPage = () => {
                         name="phone"
                         id="phone"
                         {...register('phone', {
-                            maxLength: {
-                                value: 10,
+                            pattern: {
+                                value: /^(?:(?:\+|00)33[\s.]{0,3}(?:\(0\)[\s.]{0,3})?|0)[1-9](?:(?:[\s.]?\d{2}){4}|\d{2}(?:[\s.]?\d{3}){2})$/,
                                 message: 'Format non valide',
                             },
                         })}
@@ -140,7 +141,7 @@ const FormPage = () => {
                         id="mail"
                         {...register('mail', {
                             pattern: {
-                                value: /\S+@\S+\.\S+/,
+                                value: /^[a-zA-Z0-9.!#$%&’*+\/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/,
                                 message: 'Format d\'email non valide'
                             }
                         })}
@@ -148,7 +149,7 @@ const FormPage = () => {
                     {errors.email && <span>{errors.email.message}</span>}
                 </div>
                 <div className="formpage__input-group">
-                    <label htmlFor="contact">Nom de l'enseignant/e </label>
+                    <label htmlFor="contact">Nom de l&apos;enseignant/e </label>
                     <input
                         type="text"
                         name="contact"
@@ -163,7 +164,7 @@ const FormPage = () => {
                     {errors.teacher && <span>{errors.teacher.message}</span>}
                 </div>
                 <div className="formpage__input-group">
-                    <label htmlFor="studentNumber">Nombre d'élèves</label>
+                    <label htmlFor="studentNumber">Nombre d&apos;élèves</label>
                     <input
                         type="number"
                         name="studentNumber"
@@ -183,7 +184,7 @@ const FormPage = () => {
                     {errors.student && <span>{errors.student.message}</span>}
                 </div>
                 <div className="formpage__input-group">
-                    <label htmlFor="guideNumber">Nombre d'accompagnateurs</label>
+                    <label htmlFor="guideNumber">Nombre d&apos;accompagnateurs</label>
                     <input
                         type="text"
                         name="guideNumber"
@@ -240,7 +241,7 @@ const FormPage = () => {
                     ></textarea>
                     {errors.transport && <span>{errors.transport.message}</span>}
                 </div>
-                {inscriptionDone && <p style={{textAlign: 'center', border: '1px solid black', borderRadius: 10, padding: '1rem', marginTop: '1rem'}}>Votre inscription a bien été prise en compte. Vous allez être redirigé vers la page d'accueil</p>}
+                {inscriptionDone && <p style={{textAlign: 'center', border: '1px solid black', borderRadius: 10, padding: '1rem', marginTop: '1rem'}}>Votre inscription a bien été prise en compte. Vous allez être redirigé vers la page d&apos;accueil</p>}
                 <button className="formpage__btn">Réserver</button>
             </form>
         </div>
