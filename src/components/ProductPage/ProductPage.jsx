@@ -9,10 +9,9 @@ import Particularity from './Particularity/Particularity';
 import Variety from './Variety/Variety';
 import Tips from './Tips/Tips';
 import Loading from '../UI/Loading/Loading';
-import Message from '../Message/Message.jsx';
+import Notification from '../Notification/Notification.jsx';
 
 import './ProductPage.scss';
-
 
 /**
  * Container component for the Product page(Banner/CalendarHarvest/Particularity/Variety/Tips)
@@ -46,7 +45,7 @@ const ProductPage = () => {
             {isLoading && <Loading /> }
             {!isLoading && (<>
                 <Link to={'/products'}><button className="products-page__button" title="revenir à l'inventaire des produits" aria-label="revenir à l'inventaire des produits">précédent</button></Link>
-                <Message />
+                <Notification />
                 <h2 className="crop-page__page-title">Fiche Produit</h2>
                 <Banner name={product.name} image={product.image} />
                 <Availablity tag={product.isAvailable}/>
