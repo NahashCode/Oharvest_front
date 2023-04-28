@@ -28,7 +28,7 @@ const Notification = () => {
     return (
         <div className={isHarvestOpen ? 'notification --open' : 'notification --close'}>
             {weatherReport && <img src={`https://openweathermap.org/img/wn/${weatherReport.icon}@2x.png`} alt={`${weatherReport.description}`} />}
-            <p className={ isHarvestOpen ? 'notification__content --open' : 'notification__content --close'}>{isHarvestOpen ? 'La cueillette est actuellement OUVERTE !' : 'La cueillette est actuellement FERMÉ !'} </p>
+            <p className={ isHarvestOpen ? 'notification__content --open' : 'notification__content --close'}>{isHarvestOpen ? 'La cueillette est actuellement OUVERTE !' : 'La cueillette est actuellement FERMÉ !'}</p>
         </div>
     );
 };
