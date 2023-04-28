@@ -31,16 +31,21 @@ const RecipeProduct = ({name}) => {
     return (
         <div className='recipe'>
             <h2 className='recipe__title'>Liste des recettes</h2>
-            <ul>
-                {filteredRecipes.map((recipe, index) => (
-                    <li key={index}>
-                        <img src={`http://antoineperal-server.eddi.cloud${recipe.picture}`}></img>
-                        <h3>{recipe.label}</h3>
-                        <p>Difficulté: {recipe.difficulty}</p>
-                        <p>Temps de préparation: {recipe.time}</p>
-                        <a href='/'></a>
-                    </li>
-                ))}
+            <ul className='recipe__list'>
+                {filteredRecipes.length > 0 ? (
+                    filteredRecipes.map((recipe, index) => (
+                        <li className='recipe__list-card' key={index}>
+                            <img className='recipe__list-card-img' src={`http://antoineperal-server.eddi.cloud${recipe.picture}`}></img>
+                            <h3 className='recipe__list-card-title' >{recipe.label}</h3>
+                            <p className='recipe__list-card-difficulty' >Difficulté: {recipe.difficulty}</p>
+                            <p className='recipe__list-card-time' >Temps de préparation: {recipe.time}</p>
+                            <a className='recipe__list-card-link' href='/'>La recette c&apos;est par ici</a>
+                        </li>
+                    ))
+                ) : (
+                    <p className='recipe__not-exist' >Il n&apos;y a pas encore de recettes pour ce produit !</p>
+                    
+                )}
             </ul>
         </div>
     );
