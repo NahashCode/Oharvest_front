@@ -6,6 +6,7 @@ import axios from 'axios';
 
 const FormPage = () => {
     const [inscriptionDone, setInscriptionDone] = useState(false);
+    const [error, setError] = useState(false);
     const [searchParams] = useSearchParams();
     const naviguate = useNavigate();
 
@@ -32,6 +33,7 @@ const FormPage = () => {
         })
             .then(function (response) {
                 console.log(response.data);
+                setError(false);
                 setInscriptionDone(true);
                 setTimeout(() => {
                     naviguate('/');
@@ -39,6 +41,7 @@ const FormPage = () => {
             })
             .catch(function (error) {
                 console.log(error);
+                setError(true);
             });
     };
 
@@ -141,7 +144,7 @@ const FormPage = () => {
                         id="mail"
                         {...register('mail', {
                             pattern: {
-                                value: /^[a-zA-Z0-9.!#$%&’*+\/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/,
+                                value: /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/,
                                 message: 'Format d\'email non valide'
                             }
                         })}
@@ -242,6 +245,7 @@ const FormPage = () => {
                     {errors.transport && <span>{errors.transport.message}</span>}
                 </div>
                 {inscriptionDone && <p style={{textAlign: 'center', border: '1px solid black', borderRadius: 10, padding: '1rem', marginTop: '1rem'}}>Votre inscription a bien été prise en compte. Vous allez être redirigé vers la page d&apos;accueil</p>}
+                {error && <p style={{textAlign: 'center', border: '1px solid black', borderRadius: 10, padding: '1rem', marginTop: '1rem'}}> ⚠️ Erreur API</p>}
                 <button className="formpage__btn">Réserver</button>
             </form>
         </div>
