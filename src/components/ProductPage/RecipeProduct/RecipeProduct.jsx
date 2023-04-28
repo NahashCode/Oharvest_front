@@ -6,9 +6,10 @@ import './RecipeProduct.scss';
 import Loading from '../../UI/Loading/Loading.jsx';
 import Error from '../../UI/Error/Error.jsx';
 
-
 /**
- * Section with the recipe card
+ * Section with the recipe card.
+ * @param name {string} product name used as an ingredient in a recipe
+ * @returns {JSX.Element}
  */
 const RecipeProduct = ({name}) => {
     const [recipes, setRecipes] = useState([]);
@@ -21,13 +22,14 @@ const RecipeProduct = ({name}) => {
                 try {
                     const response = await axios.get('http://antoineperal-server.eddi.cloud/recipe');
                     setRecipes(response.data);
+                    setIsLoading(false);
                 } catch (error) {
                     console.error('Erreur lors de la récupération des recettes : ' , error);
                     setError(true);
+                    setIsLoading(false);
                 }
             };
             fetchData();
-            setIsLoading(false);
         }, 3000);
 
     }, []);
@@ -35,7 +37,6 @@ const RecipeProduct = ({name}) => {
     const filteredRecipes = recipes.filter(recipe =>
         recipe.ingredient.some(ingredient => ingredient.label === name)
     );
-    
 
     return (
         <section className='recipe'>
@@ -63,7 +64,6 @@ const RecipeProduct = ({name}) => {
     );
 };
 
-// Props validation
 RecipeProduct.propTypes = {
     name: PropTypes.string.isRequired,
 };
