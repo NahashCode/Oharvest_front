@@ -1,0 +1,15 @@
+{
+  "visitAt": "2023-09-02",
+  "slot": "morning",
+  "name": "Ecole Lambda",
+  "contact": "Jean Baille",
+  "phone": "06.06.06.06.06",
+  "mail": "ecole.lambda@oclock.io",
+  "address": "01 rue de la Joi",
+  "city": "Nothere",
+  "zipcode": "01000",
+  "studentNumber": 50,
+  "groupNumber": 2,
+  "guideNumber": 4,
+  "transport": "Bus"
+}
