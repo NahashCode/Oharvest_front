@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react';
 
-import './Message.scss';
+import './Notification.scss';
 import axios from 'axios';
 
 /**
  * notification for open or closed store information
  */
-const Message = () => {
+const Notification = () => {
     const [isHarvestOpen, setIsHarvestOpen] = useState(false);
     const [weatherReport, setWeatherReport] = useState({});
 
@@ -21,17 +21,16 @@ const Message = () => {
         axios.get(url)
             .then((response) => {
                 setWeatherReport(response.data.weather[0]);
-                console.log(weatherReport);
             })
             .catch((error) => console.log(error));
     }, []);
 
     return (
-        <div className={isHarvestOpen ? 'message --open' : 'message --close'}>
-            <img style={{height: 100}} src={`https://openweathermap.org/img/wn/${weatherReport.icon}@2x.png`} alt={`${weatherReport.description}`} />
-            <p className={ isHarvestOpen ? 'message__content --open' : 'message__content --close'}>{isHarvestOpen ? 'La cueillette est actuellement OUVERTE !' : 'La cueillette est actuellement FERMÉ !'} </p>
+        <div className={isHarvestOpen ? 'notification --open' : 'notification --close'}>
+            {weatherReport && <img src={`https://openweathermap.org/img/wn/${weatherReport.icon}@2x.png`} alt={`${weatherReport.description}`} />}
+            <p className={ isHarvestOpen ? 'notification__content --open' : 'notification__content --close'}>{isHarvestOpen ? 'La cueillette est actuellement OUVERTE !' : 'La cueillette est actuellement FERMÉ !'} </p>
         </div>
     );
 };
 
-export default Message;
+export default Notification;
