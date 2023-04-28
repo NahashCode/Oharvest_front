@@ -46,7 +46,7 @@ const RecipeProduct = ({name}) => {
                 {filteredRecipes.length > 0 ? (
                     filteredRecipes.map((recipe, index) => (
                         <li className="recipe__list-card" key={index}>
-                            <img className="recipe__list-card-img"
+                            <img className="recipe__list-card-img" alt={recipe.name}
                                 src={`http://antoineperal-server.eddi.cloud${recipe.picture}`}></img>
                             <h3 className="recipe__list-card-title">{recipe.label}</h3>
                             <p className="recipe__list-card-difficulty">Difficulté: {recipe.difficulty}</p>
