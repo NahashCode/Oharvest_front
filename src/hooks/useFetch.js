@@ -16,7 +16,6 @@ export const useFetch = (url) => {
         setTimeout(()=> {
             axios.get(url)
                 .then((response) => {
-                    console.log(response.data);
                     setData(response.data);
                 })
                 .catch((error) => {
