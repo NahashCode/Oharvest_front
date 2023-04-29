@@ -1,6 +1,11 @@
 import React from 'react';
+
 import './ContactInfo.scss';
 
+/**
+ * Contact information containing address, mail and phone
+ * @returns {JSX.Element}
+ */
 const ContactInfo = () => {
     return (
         <div className="contact__info">
