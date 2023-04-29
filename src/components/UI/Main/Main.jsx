@@ -11,10 +11,12 @@ import { Routes, Route } from 'react-router-dom';
 import './Main.scss';
 
 const Main = () => {
+    const APIurl = 'http://kevin-hesse-server.eddi.cloud/api';
+
     return (
         <main className="content">
             <Routes>
-                <Route path="/" element={<HomePage />} />
+                <Route path="/" element={<HomePage url={APIurl} />} />
                 <Route path="/map" element={<CropPage />} />
                 <Route path="/products/:id" element={<ProductPage />} />
                 <Route path="/products" element={<ProductsListPage />} />
