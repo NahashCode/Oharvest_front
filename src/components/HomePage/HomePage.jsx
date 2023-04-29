@@ -10,7 +10,8 @@ import Error from '../UI/Error/Error';
 
 
 /**
- * Landing page
+ * Page element when landing on the website
+ * @param url {string} API URL to fetch data
  * @returns {JSX.Element}
  */
 const Home = ({url}) => {

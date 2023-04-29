@@ -17,7 +17,7 @@ const Main = () => {
         <main className="content">
             <Routes>
                 <Route path="/" element={<HomePage url={APIurl} />} />
-                <Route path="/map" element={<CropPage />} />
+                <Route path="/map" element={<CropPage url={APIurl} />} />
                 <Route path="/products/:id" element={<ProductPage />} />
                 <Route path="/products" element={<ProductsListPage />} />
                 <Route path="/reservation/inscription" element={<FormPage />} />
