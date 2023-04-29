@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {useFetch} from '../../custom-hooks/useFetch.js';
+import {useFetch} from '../../hooks/useFetch.js';
 import Notification from '../Notification/Notification.jsx';
 import CropPlan from './CropPlan/CropPlan';
 import CropTable from './CropTable/CropTable';

@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {useFetch} from '../../custom-hooks/useFetch.js';
+import {useFetch} from '../../hooks/useFetch.js';
 import Carousel from '../UI/Carousel/Carousel.jsx';
 import Welcome from './Welcome/Welcome';
 import ContactSection from './ContactSection/ContactSection';
