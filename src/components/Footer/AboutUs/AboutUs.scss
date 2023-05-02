@@ -4,8 +4,8 @@
 /* Responsive CSS */
 /* ------------------------------------------------------ */
 
-/* Mobile responsive (20rem-26.5625rem) */
-@media only screen and (max-width: 26.5625rem) {
+/* Mobile responsive (max-width: 425px) */
+@media only screen and (max-width: 425px) {
   .aboutus__dev-photo {
     width: 15rem;
     height: 15rem;
@@ -24,8 +24,8 @@
   }
 }
 
-/* Tablet responsive (26.5625rem-64rem) */
-@media only screen and (min-width: 26.625rem) and (max-width: 64rem) {
+/* Tablet responsive (min-width: 425px) */
+@media only screen and (min-width: 425px){
   .aboutus__dev-photo {
     width: 20rem;
     height: 20rem;
@@ -43,8 +43,8 @@
   }
 }
 
-/* Desktop responsive (64rem-90rem) */
-@media only screen and (min-width: 64rem) {
+/* Desktop responsive (min-width: 1024px) */
+@media only screen and (min-width: 1024px) {
   .aboutus__dev-photo {
     width: 20rem;
     height: 20rem;
