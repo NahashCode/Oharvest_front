@@ -30,21 +30,21 @@
     display: flex;
     flex-direction: column;
     padding: 0.4rem;
-    color: vars.$primary-color
+    color: vars.$primary-color;
 }
 
 .contact__info-list-item a {
     display: flex;
     flex-direction: column;
-    color: vars.$primary-color
+    color: vars.$primary-color;
 }
 
 .contact__info-list-item-title {
     font-weight: bold;
-    color: vars.$primary-color
+    color: vars.$primary-color;
 }
 
 .fa-solid {
     margin-right: 0.625rem;
-    color: vars.$color-success-dark;
+    color: vars.$summer-color;
 }
