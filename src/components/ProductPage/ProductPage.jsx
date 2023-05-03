@@ -39,7 +39,9 @@ const ProductPage = ({url, config}) => {
                 )}
                 <Particularity description={data.description}/>
                 <h3 className="crop-page__page-title">Liste des variétés</h3>
-                {data.variety.length === 0 && <p className="recipe__not-exist">Il n&apos;y a pas encore de variétés répertoriées !</p>}
+                <div className='card__recipe-absent'>
+                    {data.variety.length === 0 && <p className="recipe__not-exists">Il n&apos;y a pas encore de variétés répertoriées !</p>}
+                </div>
                 {(data.variety.length > 0) && data.variety.map(item => <Variety key={item.id} nameVariety={item.name} descVariety={item.description} />)}
                 <Tips tip={data.tip}/>
                 <Link to={'/products'}><button className="products-page__button" title="revenir à l'inventaire des produits" aria-label="revenir à l'inventaire des produits">précédent</button></Link>
